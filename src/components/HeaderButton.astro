@@ -1,0 +1,23 @@
+---
+const {href} = Astro.props
+---
+<a href={href} class="button">
+    <slot name="before"/>
+    <slot/>
+    <slot name="after"/>
+</a>
+
+<style>
+    .button{
+        @apply 
+        bg-blue-700
+        hover:bg-blue-800
+        text-white 
+        font-bold 
+        py-2 
+        px-4 
+        rounded 
+        cursor-pointer
+        mx-2
+    }
+</style>

@@ -1,0 +1,20 @@
+---
+
+const {name} = Astro.props
+const {description} = Astro.props
+const {href} = Astro.props
+---
+
+
+<div class="relative flex mx-5 my-5 w-96 flex-col rounded-xl bg-zinc-800 bg-clip-border text-gray-700 shadow-md">
+    				
+    <img src="" alt="">
+    <div class="">
+        <h2 class="text-gray-400 mx-2 my-2 font-bold">{name}</h2>
+        <p class="text-gray-300 mx-2 my-2 ">{description}</p>
+        <span class=" mx-4 bg-yellow-100 text-yellow-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-yellow-900 dark:text-yellow-300">JavaScript</span>
+        <div class="flex justify-between mx-2 my-2">
+            <a href={href} class="text-gray-400 hover:text-gray-300">View Project</a>
+        </div>
+    </div>
+</div>
