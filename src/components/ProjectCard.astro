@@ -12,15 +12,17 @@ const tagStyles: {[key: string]: string} = {
     JavaScript: "bg-yellow-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded",
     CSS: "bg-blue-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",
     HTML: "bg-red-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",  
+    Python: "bg-green-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",
+    pyPlot: "bg-purple-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",  
 }
 ---
 
 
-<div class="relative flex mx-5 my-5 w-96 flex-col rounded-xl bg-zinc-800 bg-clip-border text-gray-700 shadow-md">
+<div class="relative h-full  mx-5 my-5 w-96 flex-col rounded-xl bg-slate-800 bg-clip-border text-slate-700 shadow-md">
     <img src={image_url} alt={alt}  class="rounded-t-xl object-cover h-48 w-full">
     <div class="p-4">
-        <h2 class="text-gray-400 font-bold text-xl mb-2">{name}</h2>
-        <p class="text-gray-300 mb-4">{desc}</p>
+        <h2 class="text-slate-400 font-bold text-xl mb-2">{name}</h2>
+        <p class="text-slate-300 mb-4">{desc}</p>
         <div class ="tags my-2">
             {tags.map ((tag: string) => (
                  <span class={`tag ${tagStyles[tag]}`}>{tag}</span>
@@ -28,7 +30,7 @@ const tagStyles: {[key: string]: string} = {
         </div>
 
         <div class="flex justify-between items-center">
-            <a href="{href}" class="text-gray-400 hover:text-gray-300 hover:underline">View Project</a>
+            <a href="{href}" class="text-slate-400 hover:text-slate-300 hover:underline">View Project</a>
         </div>
     </div>
 </div>
