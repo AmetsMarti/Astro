@@ -7,7 +7,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 console.log('Hola mundo');
 ---
 
-<Layout title ="Hola">
+<Layout title ="Hola">		
 	<main class="max-sm">
 
 		<div class="justify-center itemns-center flex flex-row px-4 py-4 ">
@@ -16,8 +16,11 @@ console.log('Hola mundo');
 		<section class="flex-wrap justify-center items-center">
 		
 			<div class ="flex flex-wrap mx-4 my-4 justify-center items-center">
-				<ProjectCard name ="Hola"/>
-				<ProjectCard name ="Puto" href="https://www.github.com/AmetsMarti/calculator"/>
+				<ProjectCard name ="Calculator" 
+							desc = "A simple calculator made with HTML, CSS and JavaScript. Implements a dynamic dark/light theme switcher." 
+							href="https://www.github.com/AmetsMarti/calculator"
+							image_url ="https://github.com/AmetsMarti/calculator/blob/main/calculator_thubnail.jpg?raw=true"/>
+							
 			</div>
 			
 		</section>
