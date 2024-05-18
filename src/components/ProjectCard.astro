@@ -6,6 +6,13 @@ const {href} = Astro.props
 const {desc} = Astro.props
 const {image_url} = Astro.props
 const {alt} = Astro.props
+const {tags} = Astro.props
+
+const tagStyles: {[key: string]: string} = {
+    JavaScript: "bg-yellow-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded",
+    CSS: "bg-blue-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",
+    HTML: "bg-red-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",  
+}
 ---
 
 
@@ -14,6 +21,12 @@ const {alt} = Astro.props
     <div class="p-4">
         <h2 class="text-gray-400 font-bold text-xl mb-2">{name}</h2>
         <p class="text-gray-300 mb-4">{desc}</p>
+        <div class ="tags my-2">
+            {tags.map ((tag: string) => (
+                 <span class={`tag ${tagStyles[tag]}`}>{tag}</span>
+            ))}
+        </div>
+
         <div class="flex justify-between items-center">
             <a href="{href}" class="text-gray-400 hover:text-gray-300 hover:underline">View Project</a>
         </div>
