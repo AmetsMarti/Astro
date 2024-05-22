@@ -3,12 +3,10 @@ import HeaderButton from "../components/HeaderButton.astro"
 ---
 
 
-<header class ="text-center mx-auto pt-10 flex-wrap ">
-    <div class="">
-        <h2 class="font-extrabold text-white text-4xl tracking-tight mb-4" >My Astro Page</a></h2>
-        </a>
-        
-        <nav class="py-4">
+<header class ="mx-auto sticky flex shadow-xl border dark:border-slate-400/20 bg-gradient-to-r dark:from-slate-700/30 dark:to-slate-900/30 backdrop-blur-md z-40 ">
+    <h2 class=" flex-col flex font-extrabold text-white text-4xl tracking-tight mb-4 mx-10" >&#128128;</a></h2>
+    <div class=" self-center">    
+        <nav class="py-4 justify-center">
             <HeaderButton class="flex" href="/index">Home</HeaderButton>
             <HeaderButton class="flex" href="/about">About</HeaderButton>
             <HeaderButton class="flex" href="/projects"> My projects</HeaderButton>    

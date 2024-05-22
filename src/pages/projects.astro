@@ -8,14 +8,12 @@ console.log('Hola mundo');
 ---
 
 <Layout title ="Hola">		
-	<main class=" ">
+	<main class="">
 
 		<div class="justify-center itemns-center flex flex-row px-4 py-4 ">
-		
 		</div>
 		<section class="flex-wrap justify-center items-center">
-			<div class ="flex flex-wrap mx-4 my-4 justify-center items-center">
-				<row class=" items-center flex lg:flex-row flex-col">
+			<div class =" grid sm:grid-cols-2 lg:grid-cols-3 md:grid-cols-2 gap-8 2xl:px-40 my-4 justify-center items-center">
 					<ProjectCard name="Calculator" 
 											 desc="A simple calculator made with HTML, CSS and JavaScript. Implements a dynamic dark/light theme switcher." 
 											 href="https://www.github.com/AmetsMarti/Calculator"
@@ -34,9 +32,66 @@ console.log('Hola mundo');
 											 width="300"
 											 height="200"
 											 />
-				</row>				
+				
+					<ProjectCard name="Calculator" 
+											 desc="A simple calculator made with HTML, CSS and JavaScript. Implements a dynamic dark/light theme switcher." 
+											 href="https://www.github.com/AmetsMarti/Calculator"
+											 image_url="calculator_thumbnail.jpg"
+											 width="300"
+											 height="200"
+											 alt="Calculator thumbnail"
+											 tags={["JavaScript","HTML","CSS"]} />
+
+					<ProjectCard name="mapGenerator" 
+											 tags={["Python", "PyPlot"]}	
+											 href="https://www.github.com/AmetsMarti/mapGenerator"						
+											 alt = "Map generator thumbnail"
+											 desc= "A map generator that implements cellular automata and random movement to generate maps alike to roguelike games"
+											 image_url="map_generator_thumbnail.png"
+											 width="300"
+											 height="200"
+											 />
+					
+	
+					<ProjectCard name="Calculator" 
+											 desc="A simple calculator made with HTML, CSS and JavaScript. Implements a dynamic dark/light theme switcher." 
+											 href="https://www.github.com/AmetsMarti/Calculator"
+											 image_url="calculator_thumbnail.jpg"
+											 width="300"
+											 height="200"
+											 alt="Calculator thumbnail"
+											 tags={["JavaScript","HTML","CSS"]} />
+
+					<ProjectCard name="mapGenerator" 
+											 tags={["Python", "PyPlot"]}	
+											 href="https://www.github.com/AmetsMarti/mapGenerator"						
+											 alt = "Map generator thumbnail"
+											 desc= "A map generator that implements cellular automata and random movement to generate maps alike to roguelike games"
+											 image_url="map_generator_thumbnail.png"
+											 width="300"
+											 height="200"
+											 />
+					
+					<ProjectCard name="Calculator" 
+											 desc="A simple calculator made with HTML, CSS and JavaScript. Implements a dynamic dark/light theme switcher." 
+											 href="https://www.github.com/AmetsMarti/Calculator"
+											 image_url="calculator_thumbnail.jpg"
+											 width="300"
+											 height="200"
+											 alt="Calculator thumbnail"
+											 tags={["JavaScript","HTML","CSS"]} />
+
+					<ProjectCard name="mapGenerator" 
+											 tags={["Python", "PyPlot"]}	
+											 href="https://www.github.com/AmetsMarti/mapGenerator"						
+											 alt = "Map generator thumbnail"
+											 desc= "A map generator that implements cellular automata and random movement to generate maps alike to roguelike games"
+											 image_url="map_generator_thumbnail.png"
+											 width="300"
+											 height="200"
+											 />
+					
 			</div>
-			
 		</section>
 	</main>
 
