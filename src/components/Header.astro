@@ -3,11 +3,11 @@ import HeaderButton from "../components/HeaderButton.astro"
 ---
 
 
-<header class ="mx-auto sticky flex shadow-xl border dark:border-slate-400/20 bg-gradient-to-r dark:from-slate-700/30 dark:to-slate-900/30 backdrop-blur-md z-40 ">
+<header class ="fixed flex w-full  shadow-xl border dark:border-slate-400/30 bg-gradient-to-r from-slate-700/30 to-slate-900/30 backdrop-blur-md z-40 ">
    <img src="cube-alt-2-svgrepo-com.svg" alt="cube" class="w-12 h-12 self-center">
     <div class=" self-center">    
         <nav class="py-4 justify-center">
-            <HeaderButton class="flex" href="/src/pages/index.astro">Home</HeaderButton>
+            <HeaderButton class="flex" href="/src/pages/index">Home</HeaderButton>
             <HeaderButton class="flex" href="/about">About</HeaderButton>
             <HeaderButton class="flex" href="/projects"> My projects</HeaderButton>    
         </nav>
