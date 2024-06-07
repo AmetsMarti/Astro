@@ -19,14 +19,16 @@ const tagStyles: {[key: string]: string} = {
     HTML: "bg-red-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",  
     Python: "bg-green-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",
     PyPlot: "bg-purple-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",  
+    Qiskit: "bg-indigo-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",
 }
 ---
 <script>
     document.documentElement.classList.remove("dark");
 </script>
 
-<div class="relative h-full  mx-5  w-96 flex-col rounded-xl bg-clip-border text-slate-600 border  border-slate-400/20 bg-gradient-to-r from-slate-700/30 to-slate-900/30 backdrop-blur-sm">
-    <img src={image_url} alt={alt} width={image_width} height={image_height} class="rounded-t-xl object-cover h-48 w-full backdrop-blur-sm"/>
+<div class="relative h-full  mx-5  w-96 flex-col rounded-xl bg-clip-border text-slate-600 border  border-slate-400/30 bg-gradient-to-r from-slate-700/30 to-slate-900/30 backdrop-blur-sm">
+    <img src={image_url} alt={alt} width={image_width} height={image_height} class="rounded-t-xl object-cover w-full h-40
+     backdrop-blur-sm"/>
     <div class="p-4">
         <h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-xl mb-2">{name}</h2>
         <p class="dark:text-slate-300 light:text-slate-600 mb-4">{desc}</p>

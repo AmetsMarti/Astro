@@ -1,0 +1,43 @@
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(52, 39, 126, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-2000px);
+        opacity: 0;
+    }
+}
+
+<div class="particles">
+			<!-- Generating 50 particles -->
+			<script>
+				for (let i = 0; i < 5; i++) {
+					const particle = document.createElement('div');
+					particle.className = 'particle';
+					particle.style.width = `${Math.random() * 1000 + 50}px`;
+					particle.style.height = particle.style.width;
+					particle.style.left = `${Math.random() * 100}%`;
+					particle.style.top = `${Math.random() * 100 + 100}%`;
+					particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+					document.querySelector('.particles').appendChild(particle);
+				}
+			</script>
+		</div>
