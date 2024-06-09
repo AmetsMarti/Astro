@@ -1,19 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import GlassCard from "../components/GlassCard.astro"
 ---
 <Layout title="About me">
 
     <div class="px-12 text-white py-28">
-        <div class=" h-full py-4 px-3 w-96 flex-col sticky rounded-xl bg-clip-border text-slate-600 shadow-2xl border  border-slate-400/20 bg-gradient-to-r from-slate-700/30 to-slate-900/30 backdrop-blur-sm">
-            <p class=" text-slate-300 ">This page is a recopilatory of the projects I make in my free time</p>
+        <GlassCard>
+        <div class="h-full pb-2">
+                <p class=" text-slate-300 ">This page is a recopilatory of the projects I make in my free time</p>
 
-            <p class="text-slate-300"> This page itslef it's a project to learn about HTML, Tailwind, Astro and in general
-            Web development and frameworks
-        </p>
-        
+                <p class="text-slate-300"> This page itslef it's a project to learn about HTML, Tailwind, Astro and in general
+                Web development and frameworks
+                </p>
+         </div>
+        <div class=" flex flex-row">
+            <GlassCard>
+                <img src="/public/github.svg" alt="Me" class="rounded-full w-8 h-8"/>
+            </GlassCard>
         </div>
-
-        
+        <div class=" flex flex-row border rounded-md p-2 w-12">
+                <img src="/public/github.svg" alt="Me" class="rounded-full w-8 h-8"/>
+        </div>
+        </GlassCard>
+        </GlassCard>
     </div>
+
     
 </Layout>
+
+<style>
+
+</style>

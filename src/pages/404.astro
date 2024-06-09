@@ -1,13 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import GlassCard from '../components/GlassCard.astro';
 ---
 
 <main>
 
-    <Layout title="Home">
-        <h1>404</hjson>
-        <p>
-        Astro is a new kind of static site builder that delivers lightning-fast performance and modern developer experience.
-        </p>
+    <Layout title="404">
+        <div class="px-10 pt-28">
+            <GlassCard>
+                <h1 class="text-9xl font-bold text-slate-500 h-full">404</h1>
+                    <p class="text-xl text-slate-400">Page not found</p>
+                    <p class="text-slate-400 italic">It looks like you are not in the right place :)</p>
+            </GlassCard>
+        </div>
+        
     </Layout>
+  
+    
 </main>
