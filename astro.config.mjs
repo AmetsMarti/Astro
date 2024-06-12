@@ -6,5 +6,10 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  site:'https://AmetsMarti.github.io',
+  site: `https://www.christophermarkus.com`,
+  output: 'static',
+  outDir: './docs',
+  build: {
+    assets: 'astro'
+  }
 });
