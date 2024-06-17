@@ -13,13 +13,13 @@ const {image_height} = Astro.props
 
 
 
-const tagStyles: {[key: string]: string} = {
-    JavaScript: "bg-yellow-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded",
-    CSS: "bg-blue-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",
-    HTML: "bg-red-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",  
-    Python: "bg-green-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",
-    PyPlot: "bg-purple-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",  
-    Qiskit: "bg-indigo-400 text-zinc-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded ",
+const tagIcons: {[key: string]: string} = {
+    JavaScript: "tagIcons/js.svg",
+    CSS: "tagIcons/css.svg",  
+    Python: "tagIcons/python.svg",
+    PyPlot: " tagIcons/pyplot.svg",  
+    Qiskit: "tagIcons/qiskit.svg",
+    HTML: "tagIcons/html.svg",
 }
 ---
 <script>
@@ -32,15 +32,19 @@ const tagStyles: {[key: string]: string} = {
     <div class="p-4">
         <h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-xl mb-2">{name}</h2>
         <p class="dark:text-slate-300 light:text-slate-600 mb-4">{desc}</p>
-        <div class ="tags my-2">
-            {tags.map ((tag: string) => (
-                 <span class={`tag ${tagStyles[tag]}`}>{tag}</span>
+        <div class ="tags my-2 flex">
+            {tags.map((tag: string) => (
+                <span class="flex items-center  bg-slate-100 text-slate-800 text-xs font-medium me-2 px-1.5 py-0.5 rounded dark:bg-slate-700 dark:text-slate-400 border border-slate-500 mb-2">
+                    {tagIcons[tag] && <img src={tagIcons[tag]} alt={tag} class="w-4 h-4 mr-1"/>}
+                    {tag}
+                </span>
             ))}
         </div>
 
         <div class="flex justify-between items-center">
-            <a href={href} class="dark:text-slate-400 dark:hover:text-slate-300 light:text-slate-700 light:hover:text-slate-600 hover:underline bottom-0">View Project</a>
+            <a href={href} class="dark:text-slate-400 dark:hover:text-slate-300 light:text-slate-700 light:hover:text-slate-600 hover:underline bottom-0">View Project➪</a>
         </div>
     </div>
 </div>
+
 
