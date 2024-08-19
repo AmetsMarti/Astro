@@ -3,9 +3,9 @@ import GlassCard from "../components/GlassCard.astro"
 import Layout from "../layouts/Layout.astro"
 ---
 <Layout title="About me">
-    <div class="2xl:px-96  px-10 text-white pt-28 ">
-        <div class=" flex flex-row  items-stretch">
-            <div>
+    <div class="text-white pt-28 flex flex-col items-stretch grid place-items-center">
+        <div class="flex">
+            <div class="content-center max-w mx-10">
                 <GlassCard>
                     <h1 class="text-3xl font-bold text-center text-slate-500">About me</h1>
                     <p class="text-xl text-slate-400 mt-5">
@@ -13,11 +13,17 @@ import Layout from "../layouts/Layout.astro"
                     </p>
                     <br>
                     <p class="text-slate-400">
-                        The page itself is made with Astro, a static site generator that uses React components to build the pages.
+                        I am currently studying computer Science at EHU UPV, working on the branch of computing.
+                        However, I also like other aspects of informatics, such as software engineering. <br>
+                        <br>
+                        In this projects listed in this page, I will try to use tools as different as posible from each other: starting from  basic HTML, CSS and JavaScript, to use 
+                        Python, Qiskit, SQL and R for example. <br>
+                        <br>
+                        In the future I would like to add more projects related with Graphics using C and C# and explore the web frameworks like React more deeply<br>
                     </p>
                 </GlassCard>
             </div>
-            <div class="px-4 min-h-10">
+            <div class="px-4 min-h-10 content-center ">
                 <GlassCard>
                     <img src="" alt="Web development" />
                 </GlassCard>

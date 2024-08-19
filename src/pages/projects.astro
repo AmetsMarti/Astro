@@ -10,8 +10,8 @@ console.log('Hola mundo');
 <Layout title ="Projects">		
 	<main class="">
 		
-		<section class="flex-wrap justify-center items-center">
-				<div class="grid grid-flow-row gap-8 grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 md:grid-cols-2 2xl:px-40 grid-cols-3 py-28">
+		<section class="flex-wrap justify-center">
+				<div class="grid place-items-center grid-flow-row gap-8 grid-cols-1  md:grid-cols-2 xl:grid-cols-3 2xl:px-40 py-28 ">
 					<ProjectCard name="Calculator" 
 						desc="A simple calculator made with HTML, CSS and JavaScript. Implements a dynamic dark/light theme switcher." 
 						href="https://www.github.com/AmetsMarti/Calculator"
@@ -38,6 +38,16 @@ console.log('Hola mundo');
 						image_url="qiskit_thumbnail.jpg"
 						width="20"
 						height="20" />
+
+					<ProjectCard name ="TheDB"
+						tags={["JavaScript", "HTML", "CSS"]}	
+						href="https://www.github.com/AmetsMarti/TheDB"
+						alt="TheDB thumbnail"
+						desc="A Full Stack app that uses an external Dockerized database to store books i am reading with their respective info"
+						image_url="thedb_thumbnail.jpg"
+						width="20"			
+						height="20"		
+						/>
 				</div>
 			</section>
 	</main>
