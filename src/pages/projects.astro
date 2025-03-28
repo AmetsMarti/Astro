@@ -3,8 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-
-console.log('Hola mundo');
 ---
 
 <Layout title ="Projects">		
@@ -13,47 +11,46 @@ console.log('Hola mundo');
 		<section class="flex-wrap justify-center">
 				<div class="grid place-items-center grid-flow-row gap-8 grid-cols-1  md:grid-cols-2 xl:grid-cols-3 2xl:px-40 py-28 ">
 					<ProjectCard name="Calculator" 
-						desc="A simple calculator made with HTML, CSS and JavaScript. Implements a dynamic dark/light theme switcher." 
+						desc="Una calculadora simple hecha con HTML, CSS y JavaScript. Implementa un interruptor dinámico de tema claro/oscuro." 
 						href="https://www.github.com/AmetsMarti/Calculator"
 						image_url="calculator_thumbnail.jpg"
 						width="300"
 						height="200"
-						alt="Calculator thumbnail"
+						alt="Miniatura de la calculadora"
 						tags={["JavaScript","HTML","CSS"]} />
 
 					<ProjectCard name="mapGenerator" 
 						tags={["Python", "PyPlot"]}	
 						href="https://www.github.com/AmetsMarti/mapGenerator"						
-						alt="Map generator thumbnail"
-						desc="A map generator that implements cellular automata and random movement to generate maps alike to roguelike games"
+						alt="Miniatura del generador de mapas"
+						desc="Un generador de mapas que implementa autómatas celulares y movimiento aleatorio para generar mapas similares a los juegos roguelike"
 						image_url="map_generator_thumbnail.png"
 						width="300"
 						height="200" />
-
-					<ProjectCard name="IBM Quantum Challenge 2024" 
-						tags={["Python", "Qiskit"]}	
-						href="https://www.github.com/AmetsMarti/IBM-Quantum-Challenge-2024"						
-						alt="IBM Quantum Challenge 2024 thumbnail"
-						desc="My solutions to the IBM Quantum Challenge 2024. The challenge consisted of solving 4 problems using quantum computing"
-						image_url="qiskit_thumbnail.jpg"
-						width="20"
-						height="20" />
-
 					<ProjectCard name ="TheDB"
 						tags={["JavaScript", "HTML", "CSS", 'SQL']}	
 						href="https://www.github.com/AmetsMarti/TheDB"
-						alt="TheDB thumbnail"
-						desc="A Full Stack app that uses an external MySQL database to store books i am reading with their respective info"
+						alt="Miniatura de TheDB"
+						desc="Una aplicación Full Stack que utiliza una base de datos MySQL externa para almacenar los libros que estoy leyendo con su información respectiva"
 						image_url="thedb_thumbnail.png"
 						width="20"			
 						height="20"		
 						/>
 					<ProjectCard name = "Computer Graphics 3D engine"
 						tags={["C"]}
-						href="https://www.github.com/AmetsMarti/hasierakoa"
-						alt="3D engine thumbnail"
-						desc="A 3D engine developed at Computer Graphics assignment at university, it us purely for education purposes and explores differnet functionalities as tranformations, lighting and cameras."
-						image_url="kg_thumbnail"
+						href="https://www.github.com/AmetsMarti/3D_engine"
+						alt="Miniatura del motor 3D"
+						desc="Un motor 3D desarrollado en la asignación de Gráficos por Computadora en la universidad, es puramente para fines educativos y explora diferentes funcionalidades como transformaciones, iluminación y cámaras."
+						image_url="3d_engine_thumbnail.png"
+						width="20"
+						height="20"	
+					/>
+						<ProjectCard name = "React map Generator"
+						tags={["C"]}
+						href="https://www.github.com/AmetsMarti/map_generator_next"
+						alt="React Map generator"
+						desc="Implementacion del generador de mapas en React, es puramente para mostrar un diseño hecho en React de un algoritmo ya implementado por mi"
+						image_url="map_generator_next_thumbnail.png"
 						width="20"
 						height="20"	
 					/>
@@ -62,8 +59,3 @@ console.log('Hola mundo');
 	</main>
 
 </Layout>
-
-
-
-
-

@@ -1,31 +1,31 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Amets Martiarena's Portfolio" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-gradient-to-b from-gray-900 to-gray-800 text-white min-h-screen">
 		<Header />
-		
 		<slot />
+		<Footer />
 	</body>
-
 </html>
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -39,8 +39,10 @@ import Footer from '../components/Footer.astro';
 		);
 	}
 	html {
-		background-color: rgb(15 23 42);
-
+		font-family: system-ui, sans-serif;
+		background: #4c566a;
+		background-size: 224px;
+		color-scheme: dark;
 	}
 	code {
 		font-family:
@@ -54,3 +56,4 @@ import Footer from '../components/Footer.astro';
 			monospace;
 	}
 </style>
+
