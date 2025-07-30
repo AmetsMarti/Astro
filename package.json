@@ -1,29 +1,21 @@
 {
-  "name": "documents-projectos-astro",
-  "type": "module",
-  "version": "0.0.1",
+  "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@astrojs/tailwind": "^6.0.2",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "astro": "^5.12.6",
+    "astro-icon": "^1.1.5",
+    "n": "^10.2.0",
+    "ogl": "^1.0.11",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^3.4.17"
+  },
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.2.2",
-    "@astrojs/tailwind": "^6.0.2",
-    "@types/react": "^18.3.2",
-    "@types/react-dom": "^18.3.0",
-    "astro": "^5.5.5",
-    "astro-icon": "^1.1.5",
-    "dependencies": "^0.0.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwind": "^4.0.0",
-    "tailwind-scrollbar-hide": "^1.1.7",
-    "tailwindcss": "^3.4.3",
-    "three": "^0.175.0",
-    "typescript": "^5.4.5"
+    "start": "n start"
   }
 }

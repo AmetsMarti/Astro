@@ -3,11 +3,12 @@ const {size} = Astro.props;
 ---
 
 <div class="text-place-content-center">
-    <div class="py-6 px-4 sticky rounded-xl 
-    bg-clip-border text-slate-600 border  
-    border-slate-400/20
-    bg-slate-800">
+    <div class="py-6 px-4 sticky rounded-xl bg-clip-border 
+    dark:text-slate-600 light:text-gray-700 border  
+    dark:border-slate-400/20 light:border-gray-300/50
+    dark:bg-slate-800/90 light:bg-white/90 backdrop-blur-sm
+    shadow-lg dark:shadow-slate-900/20 light:shadow-gray-500/10
+    transition-all duration-300">
     <slot></slot>
     </div>
-
 </div>

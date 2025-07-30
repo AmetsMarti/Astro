@@ -5,9 +5,6 @@ export default {
 	theme: {
 		extend: {},
 	},
-	plugins: [
-		require('tailwind-scrollbar-hide')
-	],
 	integrations: [
 		react({
 		  include: ['**/react/*'],

@@ -1,7 +1,7 @@
 ---
 import GlassCard from '../components/GlassCard.astro';
 import Layout from '../layouts/Layout.astro';
-import Projects from './projects.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
 
 const tagIcons: {[key: string]: string} = {
@@ -122,113 +122,61 @@ const tags = ["JavaScript", "HTML", "CSS", "Python", "PyPlot", "SQL", "GitHub", 
                 </section>
 		</GlassCard>
 		
+		<!-- Projects Section -->
+			<section>
+				<h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-2xl mb-6 text-center">Mis Proyectos</h2>
+				<div class="grid place-items-center grid-flow-row gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+					<ProjectCard name="Calculator" 
+						desc="Una calculadora simple hecha con HTML, CSS y JavaScript. Implementa un interruptor dinámico de tema claro/oscuro." 
+						href="https://www.github.com/AmetsMarti/Calculator"
+						image_url="calculator_thumbnail.jpg"
+						width="300"
+						height="200"
+						alt="Miniatura de la calculadora"
+						tags={["JavaScript","HTML","CSS"]} />
+
+					<ProjectCard name="mapGenerator" 
+						tags={["Python", "PyPlot"]}	
+						href="https://www.github.com/AmetsMarti/mapGenerator"						
+						alt="Miniatura del generador de mapas"
+						desc="Un generador de mapas que implementa autómatas celulares y movimiento aleatorio para generar mapas similares a los juegos roguelike"
+						image_url="map_generator_thumbnail.png"
+						width="300"
+						height="200" />
+						
+					<ProjectCard name ="TheDB"
+						tags={["JavaScript", "HTML", "CSS", 'SQL']}	
+						href="https://www.github.com/AmetsMarti/TheDB"
+						alt="Miniatura de TheDB"
+						desc="Una aplicación Full Stack que utiliza una base de datos MySQL externa para almacenar los libros que estoy leyendo con su información respectiva"
+						image_url="thedb_thumbnail.png"
+						width="20"			
+						height="20"		
+						/>
+						
+					<ProjectCard name = "Computer Graphics 3D engine"
+						tags={["C"]}
+						href="https://www.github.com/AmetsMarti/3D_engine"
+						alt="Miniatura del motor 3D"
+						desc="Un motor 3D desarrollado en la asignación de Gráficos por Computadora en la universidad, es puramente para fines educativos y explora diferentes funcionalidades como transformaciones, iluminación y cámaras."
+						image_url="3d_engine_thumbnail.png"
+						width="20"
+						height="20"	
+					/>
+					
+					<ProjectCard name = "React map Generator"
+						tags={["React", "JavaScript", "HTML", "CSS"]}
+						href="https://www.github.com/AmetsMarti/map_generator_next"
+						alt="React Map generator"
+						desc="Implementacion del generador de mapas en React, es puramente para mostrar un diseño hecho en React de un algoritmo ya implementado por mi"
+						image_url="map_generator_next_thumbnail.png"
+						width="20"
+						height="20"	
+					/>
+				</div>
+			</section>
+
 	</div>
 	
 </Layout>
 
-<script>
-	import * as THREE from 'three';
-
-	// Set up scene
-	const scene = new THREE.Scene();
-	const camera = new THREE.PerspectiveCamera(75, 1, 0.2, 1000);
-
-	// Create renderer
-	const renderer = new THREE.WebGLRenderer({ alpha: true });
-	const container = document.getElementById('particles-container');
-
-	if (container) {
-		const containerRect = container.getBoundingClientRect();
-		renderer.setSize(containerRect.width, containerRect.height);
-		renderer.setClearColor(0x000000, 0);
-
-		// Add renderer to DOM
-		container.appendChild(renderer.domElement);
-
-		// Position the canvas
-		renderer.domElement.style.position = 'absolute';
-		renderer.domElement.style.top = '0';
-		renderer.domElement.style.left = '0';
-		renderer.domElement.style.zIndex = '1';
-
-		const vertexShader = `
-			varying vec3 vNormal;
-
-			void main() {
-				vNormal = normal;
-				gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-			}
-		`;
-
-		const fragmentShader = `
-			varying vec3 vNormal;
-
-			void main() {
-				vec3 normal = normalize(vNormal);
-				float intensity = dot(normal, vec3(0.5, 1.0, 0.));
-				vec3 color = vec3(0.3, 0.2, 0.3) * intensity;
-				gl_FragColor = vec4(color, 0.6);
-			}
-		`;
-
-		// Create particles
-		const particlesGeometry = new THREE.OctahedronGeometry(1, 0);
-
-		// Material
-		const material = new THREE.MeshNormalMaterial({
-			color: 0x335693,
-			transparent: true,
-			opacity: 0.1,
-			side: THREE.DoubleSide,
-			depthWrite: false,
-		});
-		const sphere = new THREE.Mesh(particlesGeometry, material);
-
-		// Mesh
-		scene.add(sphere)
-
-		// Position camera
-		camera.position.z = 3;
-
-		// Mouse tracking
-		let mouseX = 0;
-		let mouseY = 0;
-
-		let isDragging = false;
-
-		document.addEventListener('mousedown', () => {
-			isDragging = true;
-		});
-
-		document.addEventListener('mouseup', () => {
-			isDragging = false;
-		});
-
-		document.addEventListener('mousemove', (event) => {
-			mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-			mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-		});
-
-		// Animation loop
-		const animate = () => {
-			requestAnimationFrame(animate);
-
-			if (isDragging) {
-				// Rotate particles based on mouse position
-				//move to mouse position
-				
-				sphere.rotation.y += mouseX * 0.5;
-				sphere.rotation.x += -mouseY * 0.5;
-			} else {
-				// Auto rotate
-				sphere.rotation.x += 0.005;
-				sphere.rotation.y += 0.005;
-			}
-
-			renderer.render(scene, camera);
-		};
-
-
-		animate();
-	}
-</script>
