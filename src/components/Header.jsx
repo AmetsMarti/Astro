@@ -10,7 +10,19 @@ export const Header = () =>  {
     <>
         {/* Container for centering the bubble */}
         <div className="flex justify-center p-4 sticky top-0 z-40">
-            <div className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-lg rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg inline-flex items-center px-6 py-3 max-w-fit">
+            <div className="bg-white/90 
+                            dark:bg-slate-600/25 
+                            backdrop-blur-lg 
+                            rounded-2xl 
+                            border 
+                            border-slate-200 
+                            dark:border-slate-700 
+                            shadow-lg 
+                            inline-flex 
+                            items-center 
+                            px-6 
+                            py-3 
+                            max-w-fit">
                 <nav className="flex space-x-4">
                     <a href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
                         Home
