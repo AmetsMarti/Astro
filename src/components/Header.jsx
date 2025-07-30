@@ -5,6 +5,13 @@
 
 export const Header = () =>  {
 
+    const handleHomeClick = () => {
+        window.scrollTo(0,0);
+    };
+
+    const handleProjectsClick = () => {
+        window.scrollTo(0, 500);
+    };
     
     return (
     <>
@@ -24,12 +31,12 @@ export const Header = () =>  {
                             py-3 
                             max-w-fit">
                 <nav className="flex space-x-4">
-                    <a href="/" className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
-                        Home
-                    </a>
-                    <a href="/projects" className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
-                        Projects
-                    </a>
+                    <button onClick={handleHomeClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
+                        Inicio
+                    </button>
+                    <button onClick={handleProjectsClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
+                        Projectos
+                    </button>
                     <select className="text-gray-600 dark:text-slate-200 rounded-lg border border-slate-500 bg-slate-700 hover:bg-slate-800 dark:hover:text-white transition-colors whitespace-nowrap">
                         <option value="en">English</option>
                         <option value="es">Spanish</option>
