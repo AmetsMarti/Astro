@@ -146,6 +146,7 @@ const Timeline = ({
           position:sticky;
           padding: 2rem 0;
           top: 200px;
+          margin-bottom: 100px;
         }
 
         .timeline-line {
