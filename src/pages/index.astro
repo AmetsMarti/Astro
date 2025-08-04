@@ -9,6 +9,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Timeline from '../components/Timeline/Timeline.jsx';
 import { TimelineElement } from '../components/Timeline/TimelineElement.jsx';
 import FlowingMenmu from "../components/Components/FlowingMenu/FlowingMenu.tsx"
+import Squares from '../components/Backgrounds/Squares/Squares.jsx';
+import Header from '../components/Header.jsx';
 
 const tagIcons: {[key: string]: string} = {
     JavaScript: "tagIcons/js.svg",
@@ -55,9 +57,27 @@ const timelineSteps = [
 ---
 
 <Layout  title="Amets Martiarena">
-	<!-- Hero Section - Centered Name and Contact -->
-	<section class="min-h-screen flex items-center justify-center px-4">
-		<div class="text-center space-y-8">
+	<!-- Hero Section with Squares Background -->
+	<section class="relative min-h-screen flex flex-col overflow-hidden">
+		<!-- Squares Background - Only for Hero Section -->
+		<div class="absolute inset-0 bg-slate-900">
+			<Squares 
+				direction="diagonal" 
+				speed={0.5} 
+				borderColor="oklch(0.446 0.043 257.281)" 
+				squareSize={40} 
+				hoverFillColor="rgba(0,1,0,0)"
+				client:load
+			/>
+		</div>
+		
+		<!-- Header -->
+		 <div class="flex justify-center">
+			<Header client:load />
+		</div>
+		<!-- Hero Content -->
+		<div class="relative z-10 flex-1 flex items-center justify-center px-4">
+			<div class="text-center space-y-8">
 			<!-- Name with ShinyText -->
 			<div class="mb-8 hero-name">
 				<p class="text-6xl md:text-8xl font-black text-slate-800 dark:text-slate-300">
@@ -103,11 +123,10 @@ const timelineSteps = [
 				</svg>
 			</div>
 		</div>
-
-			
 	</section>
-
-	<section class="timeline-section min-h-screen flex items-center justify-center px-4">
+	
+	<!-- Timeline Section with Different Background -->
+	<section class="timeline-section min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-slate-800 to-slate-900">
 		<Timeline 
 			client:load
 			steps={timelineSteps}
@@ -118,129 +137,128 @@ const timelineSteps = [
 			className="max-w-4xl mx-auto"
 		/>
 	</section>
-	
-	
+		
+	<!-- Main Content Section with Bordered Background -->
+	<div class="bg-slate-50 dark:bg-slate-900 border-t-4 border-purple-500">
+		<div class="container mx-auto px-4 py-16 max-w-6xl">
 
-	
-
-	<!-- Main Content Section -->
-	<div class="container mx-auto px-4 py-16 max-w-6xl">
-
-		<!-- CV Section -->
-			
-				<section class="cv-section mb-6 p-2 rounded-xl border border-slate-700 bg-slate-600/25 backdrop-blur-sm ">
-					<h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-xl mb-2">Idiomas</h2>
-					<div class="space-y-2 text-slate-700 dark:text-slate-300">
-						<div class="flex justify-between">
-							<span class="font-medium text-slate-300 dark:text-slate-400">Euskera</span>
-							<span>Idioma nativo</span>
+			<!-- CV Section -->
+				
+					<section class="cv-section mb-6 p-2 rounded-xl border border-slate-700 bg-slate-600/25 backdrop-blur-sm ">
+						<h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-xl mb-2">Idiomas</h2>
+						<div class="space-y-2 text-slate-700 dark:text-slate-300">
+							<div class="flex justify-between">
+								<span class="font-medium text-slate-300 dark:text-slate-400">Euskera</span>
+								<span>Idioma nativo</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-medium text-slate-300 dark:text-slate-400">Inglés</span>
+								<span>Nivel B2</span>
+							</div>
+							<div class="flex justify-between">
+								<span class="font-medium text-slate-300 dark:text-slate-400">Castellano</span>
+								<span>Nivel alto</span>
+							</div>
 						</div>
-						<div class="flex justify-between">
-							<span class="font-medium text-slate-300 dark:text-slate-400">Inglés</span>
-							<span>Nivel B2</span>
-						</div>
-						<div class="flex justify-between">
-							<span class="font-medium text-slate-300 dark:text-slate-400">Castellano</span>
-							<span>Nivel alto</span>
+					</section>
+
+				<section class="cv-section mb-6 p-6 rounded-xl border border-slate-700 bg-slate-600/25 backdrop-blur-sm">
+					<h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-xl mb-4">Conocimientos</h2>
+					<div class="tags my-4 flex flex-wrap gap-3">
+						{tags.map((tag: string) => (
+							<span class="skill-tag flex items-center bg-white/10 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 text-sm font-medium px-3 py-2 rounded-lg border border-slate-200/20 dark:border-slate-600/30 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200">
+								{tagIcons[tag] && <img src={tagIcons[tag]} alt={tag} class="w-5 h-5 mr-2"/>}
+								{tag}
+							</span>
+						))}
+					</div>
+					
+					<div class="mt-6 pt-6 border-t border-slate-600/30">
+						<h3 class="dark:text-slate-400 light:text-slate-700 font-bold text-lg mb-3">Áreas de Interés</h3>
+						<div class="grid gap-3">
+							<div class="interest-item flex items-center gap-3 p-3 rounded-lg bg-white/5 dark:bg-slate-800/20 border border-slate-200/10 dark:border-slate-600/20">
+								<div class="w-2 h-2 bg-purple-400 rounded-full flex-shrink-0"></div>
+								<span class="text-slate-700 dark:text-slate-300">Desarrollo/Diseño Web</span>
+							</div>
+							<div class="interest-item flex items-center gap-3 p-3 rounded-lg bg-white/5 dark:bg-slate-800/20 border border-slate-200/10 dark:border-slate-600/20">
+								<div class="w-2 h-2 bg-purple-400 rounded-full flex-shrink-0"></div>
+								<span class="text-slate-700 dark:text-slate-300">Gráficos 3D y Shaders</span>
+							</div>
+							<div class="interest-item flex items-center gap-3 p-3 rounded-lg bg-white/5 dark:bg-slate-800/20 border border-slate-200/10 dark:border-slate-600/20">
+								<div class="w-2 h-2 bg-purple-400 rounded-full flex-shrink-0"></div>
+								<span class="text-slate-700 dark:text-slate-300">Simulación de Entornos Físicos</span>
+							</div>
 						</div>
 					</div>
 				</section>
 
-			<section class="cv-section mb-6 p-6 rounded-xl border border-slate-700 bg-slate-600/25 backdrop-blur-sm">
-				<h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-xl mb-4">Conocimientos</h2>
-				<div class="tags my-4 flex flex-wrap gap-3">
-					{tags.map((tag: string) => (
-						<span class="skill-tag flex items-center bg-white/10 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 text-sm font-medium px-3 py-2 rounded-lg border border-slate-200/20 dark:border-slate-600/30 backdrop-blur-sm hover:bg-white/20 dark:hover:bg-slate-700/50 transition-all duration-200">
-							{tagIcons[tag] && <img src={tagIcons[tag]} alt={tag} class="w-5 h-5 mr-2"/>}
-							{tag}
-						</span>
-					))}
-				</div>
 				
-				<div class="mt-6 pt-6 border-t border-slate-600/30">
-					<h3 class="dark:text-slate-400 light:text-slate-700 font-bold text-lg mb-3">Áreas de Interés</h3>
-					<div class="grid gap-3">
-						<div class="interest-item flex items-center gap-3 p-3 rounded-lg bg-white/5 dark:bg-slate-800/20 border border-slate-200/10 dark:border-slate-600/20">
-							<div class="w-2 h-2 bg-purple-400 rounded-full flex-shrink-0"></div>
-							<span class="text-slate-700 dark:text-slate-300">Desarrollo/Diseño Web</span>
+			<!-- Projects Section -->
+		
+				<section class="cv-section">
+					<h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-2xl mb-6 text-center">Mis Proyectos</h2>
+					<div class="grid place-items-center grid-flow-row gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+						<div class="project-card">
+							<ProjectCard name="Calculator" 
+								desc="Una calculadora simple hecha con HTML, CSS y JavaScript. Implementa un interruptor dinámico de tema claro/oscuro." 
+								href="https://www.github.com/AmetsMarti/Calculator"
+								image_url="calculator_thumbnail.jpg"
+								width="300"
+								height="200"
+								alt="Miniatura de la calculadora"
+								tags={["JavaScript","HTML","CSS"]} />
 						</div>
-						<div class="interest-item flex items-center gap-3 p-3 rounded-lg bg-white/5 dark:bg-slate-800/20 border border-slate-200/10 dark:border-slate-600/20">
-							<div class="w-2 h-2 bg-purple-400 rounded-full flex-shrink-0"></div>
-							<span class="text-slate-700 dark:text-slate-300">Gráficos 3D y Shaders</span>
-						</div>
-						<div class="interest-item flex items-center gap-3 p-3 rounded-lg bg-white/5 dark:bg-slate-800/20 border border-slate-200/10 dark:border-slate-600/20">
-							<div class="w-2 h-2 bg-purple-400 rounded-full flex-shrink-0"></div>
-							<span class="text-slate-700 dark:text-slate-300">Simulación de Entornos Físicos</span>
-						</div>
-					</div>
-				</div>
-			</section>
 
-			
-		<!-- Projects Section -->
-	
-			<section class="cv-section">
-				<h2 class="dark:text-slate-400 light:text-slate-700 font-bold text-2xl mb-6 text-center">Mis Proyectos</h2>
-				<div class="grid place-items-center grid-flow-row gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
-					<div class="project-card">
-						<ProjectCard name="Calculator" 
-							desc="Una calculadora simple hecha con HTML, CSS y JavaScript. Implementa un interruptor dinámico de tema claro/oscuro." 
-							href="https://www.github.com/AmetsMarti/Calculator"
-							image_url="calculator_thumbnail.jpg"
-							width="300"
-							height="200"
-							alt="Miniatura de la calculadora"
-							tags={["JavaScript","HTML","CSS"]} />
-					</div>
-
-					<div class="project-card">
-						<ProjectCard name="mapGenerator" 
-							tags={["Python", "PyPlot"]}	
-							href="https://www.github.com/AmetsMarti/mapGenerator"						
-							alt="Miniatura del generador de mapas"
-							desc="Un generador de mapas que implementa autómatas celulares y movimiento aleatorio para generar mapas similares a los juegos roguelike"
-							image_url="map_generator_thumbnail.png"
-							width="300"
-							height="200" />
-					</div>
-						
-					<div class="project-card">
-						<ProjectCard name ="TheDB"
-							tags={["JavaScript", "HTML", "CSS", 'SQL']}	
-							href="https://www.github.com/AmetsMarti/TheDB"
-							alt="Miniatura de TheDB"
-							desc="Una aplicación Full Stack que utiliza una base de datos MySQL externa para almacenar los libros que estoy leyendo con su información respectiva"
-							image_url="thedb_thumbnail.png"
-							width="20"			
-							height="20"		
+						<div class="project-card">
+							<ProjectCard name="mapGenerator" 
+								tags={["Python", "PyPlot"]}	
+								href="https://www.github.com/AmetsMarti/mapGenerator"						
+								alt="Miniatura del generador de mapas"
+								desc="Un generador de mapas que implementa autómatas celulares y movimiento aleatorio para generar mapas similares a los juegos roguelike"
+								image_url="map_generator_thumbnail.png"
+								width="300"
+								height="200" />
+						</div>
+							
+						<div class="project-card">
+							<ProjectCard name ="TheDB"
+								tags={["JavaScript", "HTML", "CSS", 'SQL']}	
+								href="https://www.github.com/AmetsMarti/TheDB"
+								alt="Miniatura de TheDB"
+								desc="Una aplicación Full Stack que utiliza una base de datos MySQL externa para almacenar los libros que estoy leyendo con su información respectiva"
+								image_url="thedb_thumbnail.png"
+								width="20"			
+								height="20"		
+								/>
+						</div>
+							
+						<div class="project-card">
+							<ProjectCard name = "Computer Graphics 3D engine"
+								tags={["C"]}
+								href="https://www.github.com/AmetsMarti/3D_engine"
+								alt="Miniatura del motor 3D"
+								desc="Un motor 3D desarrollado en la asignación de Gráficos por Computadora en la universidad, es puramente para fines educativos y explora diferentes funcionalidades como transformaciones, iluminación y cámaras."
+								image_url="3d_engine_thumbnail.png"
+								width="20"
+								height="20"	
 							/>
-					</div>
+						</div>
 						
-					<div class="project-card">
-						<ProjectCard name = "Computer Graphics 3D engine"
-							tags={["C"]}
-							href="https://www.github.com/AmetsMarti/3D_engine"
-							alt="Miniatura del motor 3D"
-							desc="Un motor 3D desarrollado en la asignación de Gráficos por Computadora en la universidad, es puramente para fines educativos y explora diferentes funcionalidades como transformaciones, iluminación y cámaras."
-							image_url="3d_engine_thumbnail.png"
-							width="20"
-							height="20"	
-						/>
+						<div class="project-card">
+							<ProjectCard name = "React map Generator"
+								tags={["React", "JavaScript", "HTML", "CSS"]}
+								href="https://www.github.com/AmetsMarti/map_generator_next"
+								alt="React Map generator"
+								desc="Implementacion del generador de mapas en React, es puramente para mostrar un diseño hecho en React de un algoritmo ya implementado por mi"
+								image_url="map_generator_next_thumbnail.png"
+								width="20"
+								height="20"	
+							/>
+						</div>
 					</div>
-					
-					<div class="project-card">
-						<ProjectCard name = "React map Generator"
-							tags={["React", "JavaScript", "HTML", "CSS"]}
-							href="https://www.github.com/AmetsMarti/map_generator_next"
-							alt="React Map generator"
-							desc="Implementacion del generador de mapas en React, es puramente para mostrar un diseño hecho en React de un algoritmo ya implementado por mi"
-							image_url="map_generator_next_thumbnail.png"
-							width="20"
-							height="20"	
-						/>
-					</div>
-				</div>
-			</section>
+				</section>
+			</div>
+		</div>
 	</div>
 </Layout>
 

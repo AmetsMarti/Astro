@@ -22,22 +22,11 @@ const { title } = Astro.props;
 	</head>
 	
 	<body class="bg-slate-900 dark:bg-slate-900 light:bg-gray-100">
-		<div class="fixed inset-0 w-full h-full bg-slate-900 dark:bg-slate-900 light:bg-gray-100">
-			<Squares 
-				direction="diagonal" 
-				speed={0.5} 
-				borderColor="oklch(0.446 0.043 257.281)" 
-				squareSize={40} 
-				hoverFillColor="rgba(0,0,0,0)"
-				client:load
-			/>
-		</div>
+		
 		
 		<!-- Content layer -->
-		<div class="relative z-10 bg-gradient-to-b from-slate-900/40 to-slate-800/40 dark:from-slate-900/40 dark:to-slate-800/40 light:from-gray-100/40 light:to-gray-200/40 text-white dark:text-white light:text-gray-900 min-h-screen transition-colors duration-300">
-			
-			<Header />
-			
+		<div class="relative z-10">
+	
 			<slot />
 			
 			<Footer />
@@ -105,21 +94,6 @@ const { title } = Astro.props;
 			Courier New,
 			monospace;
 	}
-	
-	/* Ensure Squares canvas fills the background properly */
-	canvas {
-		width: 100% !important;
-		height: 100% !important;
-		background-color: transparent;
-	}
-	
-	/* Background container styling */
-	.fixed.inset-0 canvas {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-	}
+
 </style>
 

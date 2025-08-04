@@ -47,7 +47,7 @@ export const Header = () =>  {
     return (
     <>
         {/* Container for centering the bubble */}
-        <div className="flex justify-center p-4 sticky top-0 z-40">
+        <div className="flex justify-center p-4 fixed top-0 z-40  ">
             <div className="bg-white/90 
                             dark:bg-slate-600/25 
                             backdrop-blur-lg 
