@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "home": "Hasiera",
+    "studies": "Ikasketak",
+    "experience": "Esperientzia",
+    "projects": "Proiektuak"
+  },
+  "hero": {
+    "name": "Amets Martiarena",
+    "phone": "688 73 63 86",
+    "email": "ametsmarti7@gmail.com",
+    "location": "Ibarra, Gipuzkoa"
+  },
+  "timeline": {
+    "title": "Nire Ibilbidea",
+    "subtitle": "Nire prestakuntza akademikoa eta esperientzia profesionalaren bidaia",
+    "education": {
+      "primary": {
+        "title": "Lehen Hezkuntza",
+        "subtitle": "Uzturpe Ikastola, Ibarra",
+        "date": "2010-2016"
+      },
+      "bachillerato": {
+        "title": "Batxilergoa Zientifikoa",
+        "subtitle": "Orixe BHI, Tolosa",
+        "date": "2020-2022"
+      },
+      "university": {
+        "title": "Informatika Ingeniaritza (Ikasketak)",
+        "subtitle": "Unibertsitatea - 3. maila, Konputazioa",
+        "date": "2022-..."
+      },
+      "internship": {
+        "title": "Praktiketak Developair Technologies-en",
+        "subtitle": "Web Garatzailea - Frontend",
+        "date": "2025-06-02 - 2025-07-24"
+      }
+    },
+    "certifications": {
+      "title": "Ziurtagiriak",
+      "english": {
+        "title": "B2 Ingelesa",
+        "subtitle": "Hizkuntza Eskola Ofiziala"
+      },
+      "bachillerato": {
+        "title": "Batxilergoaren Titulua",
+        "subtitle": "Zientifiko-Teknologikoa"
+      },
+      "learning": {
+        "title": "Etengabeko ikaskuntza",
+        "description": "Beti profesionalki hazten eta teknologiako ezagutzak zabaltzen dituzten aukera berriak bilatzen."
+      }
+    }
+  },
+  "profile": {
+    "title": "Profil Profesionala",
+    "subtitle": "Trebetasunak, ezagutzak eta espezializazio-arloak",
+    "languages": {
+      "title": "Hizkuntzak",
+      "euskera": {
+        "name": "Euskera",
+        "level": "Hizkuntza natiboa"
+      },
+      "english": {
+        "name": "Ingelesa",
+        "level": "B2 maila"
+      },
+      "spanish": {
+        "name": "Gaztelania",
+        "level": "Maila altua"
+      }
+    },
+    "knowledge": {
+      "title": "Ezagutzak",
+      "oop": "Objektuetara bideratutako programazioa",
+      "algorithms": "Algoritmo eta datu-egituren diseinua",
+      "software": "Software ingeniaritza eta web garapena",
+      "databases": "SQL datu-baseak",
+      "graphics": "Grafikoak eta shaders",
+      "ai": "Adimen Artifiziala eta Datu Meatze"
+    },
+    "tech": {
+      "title": "Stack Teknologikoa"
+    }
+  },
+  "projects": {
+    "title": "Nire Proiektuak",
+    "subtitle": "",
+    "calculator": {
+      "name": "Calculator",
+      "description": "Weberako garatutako kalkulagailu sinplea"
+    },
+    "mapGenerator": {
+      "name": "mapGenerator",
+      "description": "Mapa ausazkoen sortzailea algoritmo desberdin batzuekin, hala nola Cellular automata eta random walk"
+    },
+    "thedb": {
+      "name": "TheDB",
+      "description": "Liburuen datu-base bat kudeatzeko web aplikazioa"
+    },
+    "engine3d": {
+      "name": "Computer Graphics 3D engine",
+      "description": "Unibertsitateko Konputagailuko Grafikoen irakasgaian garatutako 3D motorea, helburu didaktikorako soilik da eta funtzionalitate desberdinak aztertzen ditu, hala nola eraldaketak, argiteria eta kamerak."
+    },
+    "reactMap": {
+      "name": "React map Generator",
+      "description": "Mapa sortzailearen React inplementazioa"
+    }
+  }
+}

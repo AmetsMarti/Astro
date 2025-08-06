@@ -6,7 +6,7 @@ import ShinyText from '../components/ShinyText.jsx';
 import SplitText from '../components/SplitText.jsx';
 import {gsap} from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Timeline from '../components/Timeline/Timeline.jsx';
+import TranslatedTimeline from '../components/Timeline/TranslatedTimeline.jsx';
 import { TimelineElement } from '../components/Timeline/TimelineElement.jsx';
 import FlowingMenmu from "../components/Components/FlowingMenu/FlowingMenu.tsx"
 import Squares from '../components/Backgrounds/Squares/Squares.jsx';
@@ -24,37 +24,6 @@ const tagIcons: {[key: string]: string} = {
 	GitHub: "tagIcons/github.svg",
 }
 const tags = ["JavaScript", "HTML", "CSS", "Python", "PyPlot", "SQL", "GitHub", "React"];
-
-const timelineSteps = [
-	{ 
-		content: {
-			title: "Educación Primaria",
-			subtitle: "Uzturpe Ikastola, Ibarra", 
-			date: "2010-2016"
-		}
-	},
-	{ 
-		content: {
-			title: "Bachillerato Científico",
-			subtitle: "Orixe BHI, Tolosa",
-			date: "2020-2022"
-		}
-	},
-	{ 
-		content: {
-			title: "Ingeniería Informática (En curso)",
-			subtitle: "Universidad - 3er año, Computación",
-			date: "2022-..."
-		}
-	},
-	{
-		content : {
-			title : "Prácticas en Developair Technologies",
-			subtitle: "Desarrollador Web - Frontend",
-			date: "2025-06-02 - 2025-07-24"
-		}
-	}
-];
 ---
 
 <Layout  title="Amets Martiarena">
@@ -131,10 +100,10 @@ const timelineSteps = [
 			<div class="max-w-7xl mx-auto">
 				<!-- Section Title -->
 				<div class="text-center mb-16">
-					<h2 class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+					<h2 class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4" data-i18n="timeline.title">
 						Mi Trayectoria
 					</h2>
-					<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+					<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="timeline.subtitle">
 						Un recorrido por mi formación académica y experiencia profesional
 					</p>
 				</div>
@@ -142,9 +111,8 @@ const timelineSteps = [
 				<div class="grid lg:grid-cols-3 gap-12 items-start">
 					<!-- Timeline Column -->
 					<div class="lg:col-span-2">
-						<Timeline 
+						<TranslatedTimeline 
 							client:load
-							steps={timelineSteps}
 							orientation="vertical"
 							activeColor="#8B5CF6"
 							lineColor="#475569"
@@ -156,7 +124,7 @@ const timelineSteps = [
 					<!-- Certifications Column -->
 					<div class="lg:col-span-1">
 						<div class="sticky top-8">
-							<h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6">
+							<h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6" data-i18n="timeline.certifications.title">
 								Certificaciones
 							</h3>
 							<div class="space-y-4">
@@ -169,10 +137,10 @@ const timelineSteps = [
 											}}/>
 										</div>
 										<div>
-											<h4 class="font-semibold text-slate-800 dark:text-slate-200">
+											<h4 class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="timeline.certifications.english.title">
 												B2 Inglés
 											</h4>
-											<p class="text-sm text-slate-600 dark:text-slate-400">
+											<p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="timeline.certifications.english.subtitle">
 												Escuela Oficial de Idiomas
 											</p>
 										</div>
@@ -188,10 +156,10 @@ const timelineSteps = [
 											}}/>
 										</div>
 										<div>
-											<h4 class="font-semibold text-slate-800 dark:text-slate-200">
+											<h4 class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="timeline.certifications.bachillerato.title">
 												Título de Bachillerato
 											</h4>
-											<p class="text-sm text-slate-600 dark:text-slate-400">
+											<p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="timeline.certifications.bachillerato.subtitle">
 												Modalidad Científico-Tecnológica
 											</p>
 										</div>
@@ -201,10 +169,10 @@ const timelineSteps = [
 							
 							<!-- Additional Info Card -->
 							<div class="mt-8 p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-200/20 dark:border-purple-600/20">
-								<h4 class="font-semibold text-slate-800 dark:text-slate-200 mb-3">
+								<h4 class="font-semibold text-slate-800 dark:text-slate-200 mb-3" data-i18n="timeline.certifications.learning.title">
 									En constante aprendizaje
 								</h4>
-								<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+								<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="timeline.certifications.learning.description">
 									Siempre buscando nuevas oportunidades para crecer profesionalmente y expandir mis conocimientos en tecnología.
 								</p>
 							</div>
@@ -226,10 +194,10 @@ const timelineSteps = [
 		<div class="experience container mx-auto px-4 py-20 max-w-6xl relative z-10 ">
 			<!-- CV Section Header -->
 			<div class="text-center mb-16">
-				<h2 class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">
+				<h2 class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4" data-i18n="profile.title">
 					Perfil Profesional
 				</h2>
-				<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
+				<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="profile.subtitle">
 					Habilidades, conocimientos y áreas de especialización
 				</p>
 			</div>
@@ -372,7 +340,7 @@ const timelineSteps = [
 				<div class="text-center mb-12">
 					<h2 class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">Mis Proyectos</h2>
 					<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-						Una selección de proyectos que demuestran mis habilidades y pasión por la tecnología
+						
 					</p>
 				</div>
 				
@@ -449,5 +417,24 @@ const timelineSteps = [
 		background-repeat: repeat;
 	}
 </style>
+
+<script>
+  function updateTranslations() {
+    const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+    
+    elementsToTranslate.forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (key && window.t) {
+        element.textContent = window.t(key);
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(updateTranslations, 100);
+  });
+
+  document.addEventListener('languageChanged', updateTranslations);
+</script>
 
 

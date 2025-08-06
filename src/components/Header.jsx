@@ -1,9 +1,30 @@
 
-
-
-
+import LanguageSelector from './LanguageSelector.jsx';
+import { useState, useEffect } from 'react';
 
 export const Header = () =>  {
+    const [, forceUpdate] = useState({});
+
+    // Forzar re-render cuando cambie el idioma
+    useEffect(() => {
+        const handleLanguageChange = () => {
+            forceUpdate({});
+        };
+
+        document.addEventListener('languageChanged', handleLanguageChange);
+
+        return () => {
+            document.removeEventListener('languageChanged', handleLanguageChange);
+        };
+    }, []);
+
+    // Función simple para obtener traducciones
+    const t = (key, defaultValue) => {
+        if (typeof window !== 'undefined' && window.t) {
+            return window.t(key, defaultValue);
+        }
+        return defaultValue;
+    };
 
     const handleHomeClick = () => {
         window.scrollTo({
@@ -57,14 +78,6 @@ export const Header = () =>  {
         }
 
     };
-    const handleStacksClick = () => {
-
-    };
-    
-    const handleLanguagesClcik = () => {
-
-    };
-     
     
     return (
     <>
@@ -83,24 +96,20 @@ export const Header = () =>  {
                             px-6 
                             py-3 
                             max-w-fit">
-                <nav className="flex space-x-4">
+                <nav className="flex space-x-4 items-center">
                     <button onClick={handleHomeClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
-                        Inicio
+                        {t('nav.home', 'Inicio')}
                     </button>
                     <button onClick={handleTimelineClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
-                        Estudios
+                        {t('nav.studies', 'Estudios')}
                     </button>
                     <button onClick={handleExperienceClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
-                        Experiencia
+                        {t('nav.experience', 'Experiencia')}
                     </button>
                     <button onClick={handleProjectsClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
-                        Proyectos
+                        {t('nav.projects', 'Proyectos')}
                     </button>
-                    <select className="text-gray-600 dark:text-slate-200 rounded-lg border border-slate-500 bg-slate-700 hover:bg-slate-800 dark:hover:text-white transition-colors whitespace-nowrap">
-                        <option value="en">English</option>
-                        <option value="es">Spanish</option>
-                        <option value="fr">Basque</option>
-                    </select>
+                    <LanguageSelector />
                 </nav>
             </div>
         </div>      

@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "home": "Home",
+    "studies": "Studies",
+    "experience": "Experience",
+    "projects": "Projects"
+  },
+  "hero": {
+    "name": "Amets Martiarena",
+    "phone": "688 73 63 86",
+    "email": "ametsmarti7@gmail.com",
+    "location": "Ibarra, Gipuzkoa"
+  },
+  "timeline": {
+    "title": "My Journey",
+    "subtitle": "A path through my academic education and professional experience",
+    "education": {
+      "primary": {
+        "title": "Primary Education",
+        "subtitle": "Uzturpe Ikastola, Ibarra",
+        "date": "2010-2016"
+      },
+      "bachillerato": {
+        "title": "Scientific Baccalaureate",
+        "subtitle": "Orixe BHI, Tolosa",
+        "date": "2020-2022"
+      },
+      "university": {
+        "title": "Computer Engineering (Ongoing)",
+        "subtitle": "University - 3rd year, Computing",
+        "date": "2022-..."
+      },
+      "internship": {
+        "title": "Internship at Developair Technologies",
+        "subtitle": "Web Developer - Frontend",
+        "date": "2025-06-02 - 2025-07-24"
+      }
+    },
+    "certifications": {
+      "title": "Certifications",
+      "english": {
+        "title": "B2 English",
+        "subtitle": "Official Language School"
+      },
+      "bachillerato": {
+        "title": "Baccalaureate Degree",
+        "subtitle": "Scientific-Technological Track"
+      },
+      "learning": {
+        "title": "Continuous learning",
+        "description": "Always seeking new opportunities to grow professionally and expand my knowledge in technology."
+      }
+    }
+  },
+  "profile": {
+    "title": "Professional Profile",
+    "subtitle": "Skills, knowledge and areas of specialization",
+    "languages": {
+      "title": "Languages",
+      "euskera": {
+        "name": "Basque",
+        "level": "Native language"
+      },
+      "english": {
+        "name": "English",
+        "level": "B2 Level"
+      },
+      "spanish": {
+        "name": "Spanish",
+        "level": "High level"
+      }
+    },
+    "knowledge": {
+      "title": "Knowledge",
+      "oop": "Object-oriented programming",
+      "algorithms": "Algorithm and data structure design",
+      "software": "Software engineering and web development",
+      "databases": "SQL databases",
+      "graphics": "Graphics and shaders",
+      "ai": "Artificial Intelligence and Data Mining"
+    },
+    "tech": {
+      "title": "Technology Stack"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "",
+    "calculator": {
+      "name": "Calculator",
+      "description": "Simple calculator developed for web"
+    },
+    "mapGenerator": {
+      "name": "mapGenerator",
+      "description": "Random map generator with different generation algorithms, such as Cellular automata and random walk"
+    },
+    "thedb": {
+      "name": "TheDB",
+      "description": "Web application to manage a book database"
+    },
+    "engine3d": {
+      "name": "Computer Graphics 3D engine",
+      "description": "A 3D engine developed in the Computer Graphics course at university, it is purely for educational purposes and explores different functionalities such as transformations, lighting and cameras."
+    },
+    "reactMap": {
+      "name": "React map Generator",
+      "description": "React implementation of the map generator"
+    }
+  }
+}
