@@ -13,7 +13,6 @@ export const Header = () =>  {
     };
 
     const handleTimelineClick = () => {
-        // Scroll to timeline section
         const timelineSection = document.querySelector('.timeline');
         if (timelineSection) {
             timelineSection.scrollIntoView({
@@ -29,7 +28,6 @@ export const Header = () =>  {
     };
 
     const handleProjectsClick = () => {
-        // Scroll to projects section
         const projectsSection = document.querySelector('.projects');
         if (projectsSection) {
             projectsSection.scrollIntoView({
@@ -43,6 +41,30 @@ export const Header = () =>  {
             });
         }
     };
+
+    const handleExperienceClick = () => {
+        const experienceSection = document.querySelector('.experience');
+        if (experienceSection) {
+            experienceSection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        } else {
+            window.scrollTo({
+                top: window.innerHeight * 3,
+                behavior: 'smooth'
+            });
+        }
+
+    };
+    const handleStacksClick = () => {
+
+    };
+    
+    const handleLanguagesClcik = () => {
+
+    };
+     
     
     return (
     <>
@@ -66,7 +88,10 @@ export const Header = () =>  {
                         Inicio
                     </button>
                     <button onClick={handleTimelineClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
-                        Timeline
+                        Estudios
+                    </button>
+                    <button onClick={handleExperienceClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
+                        Experiencia
                     </button>
                     <button onClick={handleProjectsClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
                         Proyectos
