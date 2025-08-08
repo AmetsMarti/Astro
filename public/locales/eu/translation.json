@@ -59,7 +59,7 @@
       "title": "Hizkuntzak",
       "euskera": {
         "name": "Euskera",
-        "level": "Hizkuntza natiboa"
+        "level": "Ama hizkuntza"
       },
       "english": {
         "name": "Ingelesa",
@@ -80,7 +80,7 @@
       "ai": "Adimen Artifiziala eta Datu Meatze"
     },
     "tech": {
-      "title": "Stack Teknologikoa"
+      "title": "Teknologiak"
     }
   },
   "projects": {
