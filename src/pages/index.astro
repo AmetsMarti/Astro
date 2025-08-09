@@ -13,17 +13,19 @@ import Squares from '../components/Backgrounds/Squares/Squares.jsx';
 import Header from '../components/Header.jsx';
 import LabelIcon from '@mui/icons-material/Label';
 
+const base = import.meta.env.BASE_URL;
+
 const tagIcons: {[key: string]: string} = {
-    JavaScript: "tagIcons/js.svg",
-    CSS: "tagIcons/css.svg",  
-    Python: "tagIcons/python.svg",
-    PyPlot: " tagIcons/pyplot.svg",  
-    Qiskit: "tagIcons/qiskit.svg",
-    HTML: "tagIcons/html.svg",
-    SQL:'tagIcons/sql.svg',
-	GitHub: "tagIcons/github.svg",
-	C: "tagIcons/c.svg",
-	React: "tagIcons/react.svg",
+    JavaScript: `${base}tagIcons/js.svg`,
+    CSS: `${base}tagIcons/css.svg`,  
+    Python: `${base}tagIcons/python.svg`,
+    PyPlot: `${base}tagIcons/pyplot.svg`,  
+    Qiskit: `${base}tagIcons/qiskit.svg`,
+    HTML: `${base}tagIcons/html.svg`,
+    SQL: `${base}tagIcons/sql.svg`,
+	GitHub: `${base}tagIcons/github.svg`,
+	C: `${base}tagIcons/c.svg`,
+	React: `${base}tagIcons/react.svg`,
 }
 const tags = [ "Web", "Python", "SQL", "GitHub", "React", "C/C++" ];
 ---
@@ -89,7 +91,7 @@ const tags = [ "Web", "Python", "SQL", "GitHub", "React", "C/C++" ];
 
 				<!-- GitHub -->
 				<div class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30 md:col-span-2">
-					<img src="/tagIcons/github.svg" alt="GitHub Icon" class="w-5 h-5 ">
+					<img src={`${base}tagIcons/github.svg`} alt="GitHub Icon" class="w-5 h-5 ">
 				
 					<a href="https://github.com/AmetsMarti"	 class="text-slate-700 dark:text-slate-300 font-medium hover:text-slate-900 dark:hover:text-white transition-colors">
 						GitHub / AmetsMarti

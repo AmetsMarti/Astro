@@ -12,17 +12,16 @@ const {image_height} = Astro.props
 const {descKey} = Astro.props
 const {titleKey} = Astro.props
 
-
-
+const base = import.meta.env.BASE_URL;
 
 const tagIcons: {[key: string]: string} = {
-    JavaScript: "tagIcons/js.svg",
-    CSS: "tagIcons/css.svg",  
-    Python: "tagIcons/python.svg",
-    PyPlot: " tagIcons/pyplot.svg",  
-    Qiskit: "tagIcons/qiskit.svg",
-    HTML: "tagIcons/html.svg",
-    SQL:'tagIcons/sql.svg'
+    JavaScript: `${base}tagIcons/js.svg`,
+    CSS: `${base}tagIcons/css.svg`,  
+    Python: `${base}tagIcons/python.svg`,
+    PyPlot: `${base}tagIcons/pyplot.svg`,  
+    Qiskit: `${base}tagIcons/qiskit.svg`,
+    HTML: `${base}tagIcons/html.svg`,
+    SQL:`${base}tagIcons/sql.svg`
 }
 ---
 
