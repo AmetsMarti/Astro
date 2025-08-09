@@ -12,7 +12,7 @@ const {image_height} = Astro.props
 const {descKey} = Astro.props
 const {titleKey} = Astro.props
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL +"/";
 
 const tagIcons: {[key: string]: string} = {
     JavaScript: `${base}tagIcons/js.svg`,
