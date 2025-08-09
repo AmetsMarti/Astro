@@ -28,6 +28,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<base href={import.meta.env.BASE_URL} />
 	</head>
 	
 	<body class="bg-slate-900 dark:bg-slate-900 light:bg-gray-100">
