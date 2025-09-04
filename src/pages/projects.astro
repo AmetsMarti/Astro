@@ -4,8 +4,7 @@ import {Header} from '../components/Header.jsx';
 import Footer from '../components/Footer.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 ---
-
-<Layout title ="Projects">		
+	
 	<main class="">
 		
 		<section class="flex-wrap justify-center">
@@ -19,14 +18,6 @@ import ProjectCard from '../components/ProjectCard.astro';
 						alt="Miniatura de la calculadora"
 						tags={["JavaScript","HTML","CSS"]} />
 
-					<ProjectCard name="mapGenerator" 
-						tags={["Python", "PyPlot"]}	
-						href="https://www.github.com/AmetsMarti/mapGenerator"						
-						alt="Miniatura del generador de mapas"
-						desc="Un generador de mapas que implementa autómatas celulares y movimiento aleatorio para generar mapas similares a los juegos roguelike"
-						image_url="map_generator_thumbnail.png"
-						width="300"
-						height="200" />
 					<ProjectCard name ="TheDB"
 						tags={["JavaScript", "HTML", "CSS", 'SQL']}	
 						href="https://www.github.com/AmetsMarti/TheDB"
@@ -57,5 +48,3 @@ import ProjectCard from '../components/ProjectCard.astro';
 				</div>
 			</section>
 	</main>
-
-</Layout>

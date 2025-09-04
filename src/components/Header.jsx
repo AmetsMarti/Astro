@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react';
 
 export const Header = () =>  {
     const [, forceUpdate] = useState({});
+    const [activeSection, setActiveSection] = useState('home');
 
-    // Forzar re-render cuando cambie el idioma
+
     useEffect(() => {
         const handleLanguageChange = () => {
             forceUpdate({});
@@ -97,7 +98,7 @@ export const Header = () =>  {
                             py-3 
                             max-w-fit">
                 <nav className="flex space-x-4 items-center">
-                    <button onClick={handleHomeClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
+                    <button onClick={handleHomeClick} className=" text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">
                         {t('nav.home', 'Inicio')}
                     </button>
                     <button onClick={handleTimelineClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap">

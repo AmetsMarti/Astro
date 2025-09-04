@@ -28,8 +28,9 @@ const tagIcons: Record<string, string[]> = {
 	C: [`${base}tagIcons/c.svg`],
 	React: [`${base}tagIcons/react.svg`],
 	Web: [`${base}tagIcons/js.svg` , `${base}tagIcons/html.svg`, `${base}tagIcons/css.svg`],
+	Java: [`${base}tagIcons/java.svg`]
 }
-const tags = [ "Web", "Python", "SQL", "GitHub", "React", "C" ];
+const tags = [ "Web", "Python", "SQL", "GitHub", "React", "C", "Java" ];
 
 
 ---
@@ -379,19 +380,7 @@ const tags = [ "Web", "Python", "SQL", "GitHub", "React", "C" ];
 							tags={["JavaScript","HTML","CSS"]} />
 					</div>
 
-					<div class="project-card">
-						<ProjectCard name="mapGenerator" 
-							titleKey="projects.mapGenerator.name"
-							desc="Generador de mapas aleatorios con distintos algoritmos de generacion, como Cellular automata y random walk"
-							descKey="projects.mapGenerator.description"
-							tags={["Python", "PyPlot"]}	
-							href="https://www.github.com/AmetsMarti/mapGenerator"						
-							alt="Miniatura del generador de mapas"
-							image_url="map_generator_thumbnail.png"
-							width="300"
-							height="200" />
-					</div>
-						
+					
 					<div class="project-card">
 						<ProjectCard name ="TheDB"
 							titleKey="projects.thedb.name"
