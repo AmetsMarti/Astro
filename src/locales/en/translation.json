@@ -67,7 +67,7 @@
       },
       "spanish": {
         "name": "Spanish",
-        "level": "High level"
+        "level": "Native language"
       }
     },
     "knowledge": {
@@ -84,6 +84,7 @@
     }
   },
   "projects": {
+    "anchor": "View Project",
     "title": "My Projects",
     "subtitle": "",
     "calculator": {

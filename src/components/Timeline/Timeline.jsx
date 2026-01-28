@@ -8,7 +8,7 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const Timeline = ({ 
+const Timeline = ({
   steps = [],
   orientation = 'vertical',
   lineColor = '#e2e8f0',
@@ -37,7 +37,7 @@ const Timeline = ({
       if (step) {
         const dot = step.querySelector('.timeline-dot');
         gsap.set(step, { opacity: 0.3 });
-        gsap.set(dot, { 
+        gsap.set(dot, {
           scale: 0.8,
           backgroundColor: lineColor,
           borderColor: lineColor
@@ -53,7 +53,7 @@ const Timeline = ({
       scrub: 1,
       onUpdate: (self) => {
         const progress = self.progress;
-        
+
         // Update progress line
         if (progressLineRef.current) {
           gsap.to(progressLineRef.current, {
@@ -66,22 +66,22 @@ const Timeline = ({
         // Calculate and update active step
         const newActiveStep = Math.floor(progress * steps.length);
         const clampedStep = Math.max(0, Math.min(newActiveStep, steps.length - 1));
-        
+
         if (clampedStep !== activeStep) {
           setActiveStep(clampedStep);
-          
+
           // Animate steps
           stepRefs.current.forEach((step, index) => {
             if (step) {
               const dot = step.querySelector('.timeline-dot');
               const isActive = index <= clampedStep;
-              
+
               gsap.to(step, {
                 opacity: isActive ? 1 : 0.3,
                 duration: 0.3,
                 ease: "power2.out"
               });
-              
+
               gsap.to(dot, {
                 scale: isActive ? 1.1 : 0.8,
                 backgroundColor: isActive ? activeColor : lineColor,
@@ -103,7 +103,7 @@ const Timeline = ({
   if (!steps.length) return null;
 
   return (
-    <div 
+    <div
       ref={timelineRef}
       className={`timeline-container ${orientation} ${className} sticky top-0`}
       style={{
@@ -128,7 +128,7 @@ const Timeline = ({
           >
             {/* Step Dot */}
             <div className="timeline-dot" />
-            
+
             {/* Step Content Slot */}
             <div className="timeline-content">
               <TimelineElement
@@ -145,7 +145,7 @@ const Timeline = ({
         .timeline-container {
           position:sticky;
           padding: 2rem 0;
-          top: 200px;
+          top: 20px;
           margin-bottom: 100px;
         }
 

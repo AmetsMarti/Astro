@@ -67,7 +67,7 @@
       },
       "spanish": {
         "name": "Castellano",
-        "level": "Nivel alto"
+        "level": "Idioma nativo"
       }
     },
     "knowledge": {
@@ -84,6 +84,7 @@
     }
   },
   "projects": {
+    "anchor": "Ver Proyecto",
     "title": "Mis Proyectos",
     "subtitle": "",
     "calculator": {

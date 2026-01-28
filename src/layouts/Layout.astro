@@ -1,15 +1,15 @@
 ---
-import Header from '../components/Header.jsx';
-import Footer from '../components/Footer.astro';
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.astro";
 
-import es from '../locales/es/translation.json';
-import en from '../locales/en/translation.json';
-import eu from '../locales/eu/translation.json';
+import es from "../locales/es/translation.json";
+import en from "../locales/en/translation.json";
+import eu from "../locales/eu/translation.json";
 
 const translations = {
 	es,
 	en,
-	eu
+	eu,
 };
 
 interface Props {
@@ -31,50 +31,58 @@ const base = import.meta.env.BASE_URL;
 		<title>{title}</title>
 		<base href={base} />
 	</head>
-	
+
 	<body class="bg-slate-900 dark:bg-slate-900 light:bg-gray-100">
-		
-		
 		<!-- Content layer -->
 		<div class="relative z-10">
-	
 			<slot />
 			<script define:vars={{ translations }}>
-					(function(){
+				(function () {
 					window.allTranslations = translations;
-					window.currentLanguage = 'es';
+					window.currentLanguage = "es";
 					window.translations = translations.es;
 
-					function t(key, fallback = key){
-						return key.split('.').reduce(
-						(acc,p)=> (acc && typeof acc==='object' && p in acc) ? acc[p] : fallback,
-						window.translations
-						);
+					function t(key, fallback = key) {
+						return key
+							.split(".")
+							.reduce(
+								(acc, p) =>
+									acc && typeof acc === "object" && p in acc
+										? acc[p]
+										: fallback,
+								window.translations,
+							);
 					}
 					window.t = t;
 
-					function apply(){
-						document.querySelectorAll('[data-i18n]').forEach(el=>{
-						const k = el.getAttribute('data-i18n');
-						if(!k) return;
-						const v = t(k);
-						if(v !== k) el.textContent = v;
-						});
+					function apply() {
+						document
+							.querySelectorAll("[data-i18n]")
+							.forEach((el) => {
+								const k = el.getAttribute("data-i18n");
+								if (!k) return;
+								const v = t(k);
+								if (v !== k) el.textContent = v;
+							});
 					}
 
-					window.changeLanguage = function(lang){
-						if(!window.allTranslations[lang]) return false;
+					window.changeLanguage = function (lang) {
+						if (!window.allTranslations[lang]) return false;
 						window.translations = window.allTranslations[lang];
 						window.currentLanguage = lang;
 						apply();
-						document.dispatchEvent(new CustomEvent('languageChanged',{detail:{language:lang}}));
+						document.dispatchEvent(
+							new CustomEvent("languageChanged", {
+								detail: { language: lang },
+							}),
+						);
 						return true;
 					};
 
-					document.addEventListener('DOMContentLoaded', apply);
-					})();
-				</script>
-			
+					document.addEventListener("DOMContentLoaded", apply);
+				})();
+			</script>
+
 			<Footer />
 		</div>
 	</body>
@@ -92,7 +100,7 @@ const base = import.meta.env.BASE_URL;
 			white 60%
 		);
 	}
-	
+
 	/* Dark theme variables */
 	.dark {
 		--bg-primary: 17, 24, 39; /* gray-900 */
@@ -103,7 +111,7 @@ const base = import.meta.env.BASE_URL;
 		--text-muted: 148, 163, 184; /* slate-400 */
 		--border-color: 71, 85, 105; /* slate-600 */
 	}
-	
+
 	/* Light theme variables */
 	.light {
 		--bg-primary: 249, 250, 251; /* gray-50 */
@@ -114,21 +122,21 @@ const base = import.meta.env.BASE_URL;
 		--text-muted: 107, 114, 128; /* gray-500 */
 		--border-color: 209, 213, 219; /* gray-300 */
 	}
-	
+
 	html {
 		font-family: system-ui, sans-serif;
 		background-size: 224px;
 		transition: color-scheme 0.3s ease;
 	}
-	
+
 	.dark {
 		color-scheme: dark;
 	}
-	
+
 	.light {
 		color-scheme: light;
 	}
-	
+
 	code {
 		font-family:
 			Menlo,
@@ -140,7 +148,4 @@ const base = import.meta.env.BASE_URL;
 			Courier New,
 			monospace;
 	}
-
 </style>
-
-

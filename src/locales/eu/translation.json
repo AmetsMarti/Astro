@@ -67,7 +67,7 @@
       },
       "spanish": {
         "name": "Gaztelania",
-        "level": "Maila altua"
+        "level": "Ama hizkuntza"
       }
     },
     "knowledge": {
@@ -84,6 +84,7 @@
     }
   },
   "projects": {
+    "anchor": "Ikusi Proiektua",
     "title": "Nire Proiektuak",
     "subtitle": "",
     "calculator": {
