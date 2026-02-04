@@ -1,20 +1,6 @@
 ---
 import { Image } from "astro:assets";
 
-<<<<<<< HEAD
-const {name} = Astro.props
-const {href} = Astro.props
-const {desc} = Astro.props
-const {image_url} = Astro.props
-const {alt} = Astro.props
-const {tags} = Astro.props
-const {anchor} = Astro.props
-const {image_width} = Astro.props
-const {image_height} = Astro.props
-const {descKey} = Astro.props
-const {titleKey} = Astro.props
-const {anchorKey} = Astro.props
-=======
 const { name } = Astro.props;
 const { href } = Astro.props;
 const { desc } = Astro.props;
@@ -25,7 +11,6 @@ const { image_width } = Astro.props;
 const { image_height } = Astro.props;
 const { descKey } = Astro.props;
 const { titleKey } = Astro.props;
->>>>>>> origin/dev
 
 const base = import.meta.env.BASE_URL;
 
@@ -73,18 +58,6 @@ transition-all duration-300 hover:scale-105"
           <span
             class="flex items-center text-xs font-medium me-2 px-1.5 py-0.5 rounded mb-2 border
                 dark:bg-slate-700 dark:text-slate-400 dark:border-slate-500
-<<<<<<< HEAD
-                light:bg-gray-100 light:text-gray-800 light:border-gray-300">
-                    {tagIcons[tag] && <img src={tagIcons[tag]} alt={tag} class="w-4 h-4 mr-1"/>}
-                    {tag}
-                </span>
-            ))}
-        </div>
-
-        <div class="flex justify-between items-center">
-            <a data-i18n={anchorKey} href={href} class="dark:text-slate-400 dark:hover:text-slate-300 light:text-blue-600 light:hover:text-blue-800 hover:underline transition-colors">{anchor + "=>"}  </a>
-        </div>
-=======
                 light:bg-gray-100 light:text-gray-800 light:border-gray-300"
           >
             {tagIcons[tag] && (
@@ -94,7 +67,6 @@ transition-all duration-300 hover:scale-105"
           </span>
         ))
       }
->>>>>>> origin/dev
     </div>
 
     <div class="flex justify-between items-center">

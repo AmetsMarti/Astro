@@ -76,15 +76,11 @@
       },
       "spanish": {
         "name": "Spanish",
-<<<<<<< HEAD
-        "level": "Native language"
-=======
         "level": "High level"
       },
       "italian": {
         "name": "Italian",
         "level": "A1 Level"
->>>>>>> origin/dev
       }
     },
     "knowledge": {
