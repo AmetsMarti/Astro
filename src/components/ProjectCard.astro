@@ -1,6 +1,7 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
+<<<<<<< HEAD
 const {name} = Astro.props
 const {href} = Astro.props
 const {desc} = Astro.props
@@ -13,35 +14,66 @@ const {image_height} = Astro.props
 const {descKey} = Astro.props
 const {titleKey} = Astro.props
 const {anchorKey} = Astro.props
+=======
+const { name } = Astro.props;
+const { href } = Astro.props;
+const { desc } = Astro.props;
+const { image_url } = Astro.props;
+const { alt } = Astro.props;
+const { tags } = Astro.props;
+const { image_width } = Astro.props;
+const { image_height } = Astro.props;
+const { descKey } = Astro.props;
+const { titleKey } = Astro.props;
+>>>>>>> origin/dev
 
 const base = import.meta.env.BASE_URL;
 
-const tagIcons: {[key: string]: string} = {
-    JavaScript: `${base}tagIcons/js.svg`,
-    CSS: `${base}tagIcons/css.svg`,  
-    Python: `${base}tagIcons/python.svg`,
-    PyPlot: `${base}tagIcons/pyplot.svg`,  
-    Qiskit: `${base}tagIcons/qiskit.svg`,
-    HTML: `${base}tagIcons/html.svg`,
-    SQL:`${base}tagIcons/sql.svg`
-}
+const tagIcons: { [key: string]: string } = {
+  JavaScript: `${base}tagIcons/js.svg`,
+  CSS: `${base}tagIcons/css.svg`,
+  Python: `${base}tagIcons/python.svg`,
+  PyPlot: `${base}tagIcons/pyplot.svg`,
+  Qiskit: `${base}tagIcons/qiskit.svg`,
+  HTML: `${base}tagIcons/html.svg`,
+  SQL: `${base}tagIcons/sql.svg`,
+  React: `${base}tagIcons/react.svg`,
+  C: `${base}tagIcons/c.svg`,
+};
 ---
 
-<div class="relative h-full mx-5 w-96 flex-col rounded-xl bg-clip-border 
-dark:text-slate-600 light:text-gray-700 border 
-dark:border-slate-400/30 light:border-gray-300/50 
+<div
+  class="relative h-full mx-5 w-96 flex-col rounded-xl bg-clip-border
+dark:text-slate-600 light:text-gray-700 border
+dark:border-slate-400/30 light:border-gray-300/50
 dark:bg-slate-800/50 light:bg-white/80 backdrop-blur-sm
 shadow-lg dark:shadow-slate-900/20 light:shadow-gray-500/10
-transition-all duration-300 hover:scale-105">
-    <img src={image_url} alt={alt} width={image_width} height={image_height} 
-         class="rounded-t-xl object-cover w-full h-40 backdrop-blur-sm"/>
-    <div class="p-4">
-        <h2 data-i18n={titleKey} class="dark:text-slate-400 light:text-gray-800 font-bold text-xl mb-2">{name}</h2>
-        <p data-i18n ={descKey} class="dark:text-slate-300 light:text-gray-600 mb-4">{desc}</p>
-        <div class ="tags my-2 flex flex-wrap">
-            {tags.map((tag: string) => (
-                <span class="flex items-center text-xs font-medium me-2 px-1.5 py-0.5 rounded mb-2 border
+transition-all duration-300 hover:scale-105"
+>
+  <img
+    src={image_url}
+    alt={alt}
+    width={image_width}
+    height={image_height}
+    class="rounded-t-xl object-cover w-full h-40 backdrop-blur-sm"
+  />
+  <div class="p-4">
+    <h2
+      data-i18n={titleKey}
+      class="dark:text-slate-400 light:text-gray-800 font-bold text-xl mb-2"
+    >
+      {name}
+    </h2>
+    <p data-i18n={descKey} class="dark:text-slate-300 light:text-gray-600 mb-4">
+      {desc}
+    </p>
+    <div class="tags my-2 flex flex-wrap">
+      {
+        tags.map((tag: string) => (
+          <span
+            class="flex items-center text-xs font-medium me-2 px-1.5 py-0.5 rounded mb-2 border
                 dark:bg-slate-700 dark:text-slate-400 dark:border-slate-500
+<<<<<<< HEAD
                 light:bg-gray-100 light:text-gray-800 light:border-gray-300">
                     {tagIcons[tag] && <img src={tagIcons[tag]} alt={tag} class="w-4 h-4 mr-1"/>}
                     {tag}
@@ -52,26 +84,44 @@ transition-all duration-300 hover:scale-105">
         <div class="flex justify-between items-center">
             <a data-i18n={anchorKey} href={href} class="dark:text-slate-400 dark:hover:text-slate-300 light:text-blue-600 light:hover:text-blue-800 hover:underline transition-colors">{anchor + "=>"}  </a>
         </div>
+=======
+                light:bg-gray-100 light:text-gray-800 light:border-gray-300"
+          >
+            {tagIcons[tag] && (
+              <img src={tagIcons[tag]} alt={tag} class="w-4 h-4 mr-1" />
+            )}
+            {tag}
+          </span>
+        ))
+      }
+>>>>>>> origin/dev
     </div>
+
+    <div class="flex justify-between items-center">
+      <a
+        href={href}
+        class="dark:text-slate-400 dark:hover:text-slate-300 light:text-blue-600 light:hover:text-blue-800 hover:underline transition-colors"
+        >Ver Proyecto ➪</a
+      >
+    </div>
+  </div>
 </div>
 
 <script>
   function updateTranslations() {
-    const elementsToTranslate = document.querySelectorAll('[data-i18n]');
-    
-    elementsToTranslate.forEach(element => {
-      const key = element.getAttribute('data-i18n');
+    const elementsToTranslate = document.querySelectorAll("[data-i18n]");
+
+    elementsToTranslate.forEach((element) => {
+      const key = element.getAttribute("data-i18n");
       if (key && window.t) {
         element.textContent = window.t(key);
       }
     });
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     setTimeout(updateTranslations, 100);
   });
 
-  document.addEventListener('languageChanged', updateTranslations);
+  document.addEventListener("languageChanged", updateTranslations);
 </script>
-
-

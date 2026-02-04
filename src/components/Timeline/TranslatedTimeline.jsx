@@ -38,6 +38,16 @@ const TranslatedTimeline = (props) => {
 
       {
         content: {
+<<<<<<< HEAD
+=======
+          title: t('timeline.education.exchange.title', 'Intercambio Erasmus'),
+          subtitle: t('timeline.education.exchange.subtitle', 'La Sapienza, Roma'),
+          date: t('timeline.education.exchange.date', '2024-2025')
+        }
+      },
+      {
+        content: {
+>>>>>>> origin/dev
           title: t('timeline.education.internship.title', 'Prácticas en Developair Technologies'),
           subtitle: t('timeline.education.internship.subtitle', 'Desarrollador Web - Frontend'),
           date: t('timeline.education.internship.date', '2025-06-02 - 2025-07-24')

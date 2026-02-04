@@ -31,10 +31,21 @@ const Squares = ({
       numSquaresY.current = Math.ceil(canvas.height / squareSize) + 1;
     };
 
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    const getThemeColors = () => {
+      if (typeof window === 'undefined') return { border: borderColor, hover: hoverFillColor };
+
+      const styles = getComputedStyle(document.documentElement);
+      const borderVar = styles.getPropertyValue('--squares-border').trim();
+      const hoverVar = styles.getPropertyValue('--squares-hover').trim();
+
+      return {
+        border: borderVar || borderColor,
+        hover: hoverVar || hoverFillColor
+      };
+    };
 
     const drawGrid = () => {
+      const colors = getThemeColors();
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       const startX = Math.floor(gridOffset.current.x / squareSize) * squareSize;
@@ -50,15 +61,25 @@ const Squares = ({
             Math.floor((x - startX) / squareSize) === hoveredSquare.current.x &&
             Math.floor((y - startY) / squareSize) === hoveredSquare.current.y
           ) {
-            ctx.fillStyle = hoverFillColor;
+            ctx.fillStyle = colors.hover;
             ctx.fillRect(squareX, squareY, squareSize, squareSize);
           }
 
-          ctx.strokeStyle = borderColor;
+          ctx.strokeStyle = colors.border;
           ctx.strokeRect(squareX, squareY, squareSize, squareSize);
         }
       }
     };
+
+    const handleThemeChange = () => {
+      drawGrid();
+    };
+
+    window.addEventListener('resize', resizeCanvas);
+    document.addEventListener('themeChanged', handleThemeChange);
+    resizeCanvas();
+
+    // ... rest of the logic ...
 
     const updateAnimation = () => {
       const effectiveSpeed = Math.max(speed, 0.1);
@@ -118,6 +139,7 @@ const Squares = ({
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
+      document.removeEventListener('themeChanged', handleThemeChange);
       cancelAnimationFrame(requestRef.current);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);

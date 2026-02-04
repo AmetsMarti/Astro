@@ -13,7 +13,7 @@
   },
   "timeline": {
     "title": "My Journey",
-    "subtitle": "A path through my academic education and professional experience",
+    "subtitle": "A journey through my academic background and professional experience",
     "education": {
       "primary": {
         "title": "Primary Education",
@@ -26,9 +26,14 @@
         "date": "2020-2022"
       },
       "university": {
-        "title": "Computer Engineering (Ongoing)",
+        "title": "Computer Engineering (In progress)",
         "subtitle": "University - 3rd year, Computing",
         "date": "2022-..."
+      },
+      "exchange": {
+        "title": "Erasmus Exchange",
+        "subtitle": "La Sapienza, Rome",
+        "date": "2024-2025"
       },
       "internship": {
         "title": "Internship at Developair Technologies",
@@ -44,11 +49,15 @@
       },
       "bachillerato": {
         "title": "Baccalaureate Degree",
-        "subtitle": "Scientific-Technological Track"
+        "subtitle": "Scientific-Technological Modality"
+      },
+      "italian": {
+        "title": "A1 Italian Certificate",
+        "subtitle": "La Sapienza"
       },
       "learning": {
-        "title": "Continuous learning",
-        "description": "Always seeking new opportunities to grow professionally and expand my knowledge in technology."
+        "title": "Constantly learning",
+        "description": "Always looking for new opportunities to grow professionally and expand my knowledge in technology."
       }
     }
   },
@@ -67,33 +76,36 @@
       },
       "spanish": {
         "name": "Spanish",
+<<<<<<< HEAD
         "level": "Native language"
+=======
+        "level": "High level"
+      },
+      "italian": {
+        "name": "Italian",
+        "level": "A1 Level"
+>>>>>>> origin/dev
       }
     },
     "knowledge": {
       "title": "Knowledge",
       "oop": "Object-oriented programming",
-      "algorithms": "Algorithm and data structure design",
+      "algorithms": "Algorithm design and data structures",
       "software": "Software engineering and web development",
-      "databases": "SQL databases",
+      "databases": "SQL Databases",
       "graphics": "Graphics and shaders",
       "ai": "Artificial Intelligence and Data Mining"
     },
     "tech": {
-      "title": "Technology Stack"
+      "title": "Tech Stack"
     }
   },
   "projects": {
     "anchor": "View Project",
     "title": "My Projects",
-    "subtitle": "",
     "calculator": {
       "name": "Calculator",
       "description": "Simple calculator developed for web"
-    },
-    "mapGenerator": {
-      "name": "mapGenerator",
-      "description": "Random map generator with different generation algorithms, such as Cellular automata and random walk"
     },
     "thedb": {
       "name": "TheDB",
@@ -101,11 +113,11 @@
     },
     "engine3d": {
       "name": "Computer Graphics 3D engine",
-      "description": "A 3D engine developed in the Computer Graphics course at university, it is purely for educational purposes and explores different functionalities such as transformations, lighting and cameras."
+      "description": "A 3D engine developed in the Computer Graphics course at university, purely for educational purposes exploring features like transformations, lighting, and cameras."
     },
     "reactMap": {
       "name": "React map Generator",
-      "description": "React implementation of the map generator"
+      "description": "Implementation of the map generator in React"
     }
   }
 }

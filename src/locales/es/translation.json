@@ -30,6 +30,11 @@
         "subtitle": "Universidad - 3er año, Computación",
         "date": "2022-..."
       },
+      "exchange": {
+        "title": "Intercambio Erasmus",
+        "subtitle": "La Sapienza, Roma",
+        "date": "2024-2025"
+      },
       "internship": {
         "title": "Prácticas en Developair Technologies",
         "subtitle": "Desarrollador Web - Frontend",
@@ -45,6 +50,10 @@
       "bachillerato": {
         "title": "Título de Bachillerato",
         "subtitle": "Modalidad Científico-Tecnológica"
+      },
+      "italian": {
+        "title": "Título A1 Italiano",
+        "subtitle": "La Sapienza"
       },
       "learning": {
         "title": "En constante aprendizaje",
@@ -67,7 +76,15 @@
       },
       "spanish": {
         "name": "Castellano",
+<<<<<<< HEAD
         "level": "Idioma nativo"
+=======
+        "level": "Nivel alto"
+      },
+      "italian": {
+        "name": "Italiano",
+        "level": "Nivel A1"
+>>>>>>> origin/dev
       }
     },
     "knowledge": {
@@ -86,14 +103,9 @@
   "projects": {
     "anchor": "Ver Proyecto",
     "title": "Mis Proyectos",
-    "subtitle": "",
     "calculator": {
       "name": "Calculator",
       "description": "Calculadora simple desarrollada para web"
-    },
-    "mapGenerator": {
-      "name": "mapGenerator",
-      "description": "Generador de mapas aleatorios con distintos algoritmos de generacion, como Cellular automata y random walk"
     },
     "thedb": {
       "name": "TheDB",

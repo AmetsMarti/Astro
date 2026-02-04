@@ -30,6 +30,11 @@
         "subtitle": "Unibertsitatea - 3. maila, Konputazioa",
         "date": "2022-..."
       },
+      "exchange": {
+        "title": "Erasmus Trukea",
+        "subtitle": "La Sapienza, Erroma",
+        "date": "2024-2025"
+      },
       "internship": {
         "title": "Praktiketak Developair Technologies-en",
         "subtitle": "Web Garatzailea - Frontend",
@@ -46,25 +51,47 @@
         "title": "Batxilergoaren Titulua",
         "subtitle": "Zientifiko-Teknologikoa"
       },
+      "italian": {
+        "title": "A1 Italiera Titulua",
+        "subtitle": "La Sapienza"
+      },
       "learning": {
         "title": "Etengabeko ikaskuntza",
         "description": "Beti profesionalki hazten eta teknologiako ezagutzak zabaltzen dituzten aukera berriak bilatzen."
       }
-    }
-  },
-  "profile": {
-    "title": "Profil Profesionala",
-    "subtitle": "Trebetasunak, ezagutzak eta espezializazio-arloak",
-    "languages": {
-      "title": "Hizkuntzak",
-      "euskera": {
-        "name": "Euskera",
-        "level": "Ama hizkuntza"
+    },
+    "profile": {
+      "title": "Profil Profesionala",
+      "subtitle": "Trebetasunak, ezagutzak eta espezializazio-arloak",
+      "languages": {
+        "title": "Hizkuntzak",
+        "euskera": {
+          "name": "Euskera",
+          "level": "Ama hizkuntza"
+        },
+        "english": {
+          "name": "Ingelesa",
+          "level": "B2 maila"
+        },
+        "spanish": {
+          "name": "Gaztelania",
+          "level": "Maila altua"
+        },
+        "italian": {
+          "name": "Italiera",
+          "level": "A1 Maila"
+        }
       },
-      "english": {
-        "name": "Ingelesa",
-        "level": "B2 maila"
+      "knowledge": {
+        "title": "Ezagutzak",
+        "oop": "Objektuetara bideratutako programazioa",
+        "algorithms": "Algoritmo eta datu-egituren diseinua",
+        "software": "Software ingeniaritza eta web garapena",
+        "databases": "SQL datu-baseak",
+        "graphics": "Grafikoak eta shaders",
+        "ai": "Adimen Artifiziala eta Datu Meatze"
       },
+<<<<<<< HEAD
       "spanish": {
         "name": "Gaztelania",
         "level": "Ama hizkuntza"
@@ -106,6 +133,36 @@
     "reactMap": {
       "name": "React map Generator",
       "description": "Mapa sortzailearen React inplementazioa"
+=======
+      "tech": {
+        "title": "Teknologiak"
+      }
+    },
+    "projects": {
+      "anchor": "Ikusi Proiektua",
+      "title": "Nire Proiektuak",
+      "subtitle": "",
+      "calculator": {
+        "name": "Calculator",
+        "description": "Weberako garatutako kalkulagailu sinplea"
+      },
+      "mapGenerator": {
+        "name": "mapGenerator",
+        "description": "Mapa ausazkoen sortzailea algoritmo desberdin batzuekin, hala nola Cellular automata eta random walk"
+      },
+      "thedb": {
+        "name": "TheDB",
+        "description": "Liburuen datu-base bat kudeatzeko web aplikazioa"
+      },
+      "engine3d": {
+        "name": "Computer Graphics 3D engine",
+        "description": "Unibertsitateko Konputagailuko Grafikoen irakasgaian garatutako 3D motorea, helburu didaktikorako soilik da eta funtzionalitate desberdinak aztertzen ditu, hala nola eraldaketak, argiteria eta kamerak."
+      },
+      "reactMap": {
+        "name": "React map Generator",
+        "description": "Mapa sortzailearen React inplementazioa"
+      }
+>>>>>>> origin/dev
     }
   }
 }
