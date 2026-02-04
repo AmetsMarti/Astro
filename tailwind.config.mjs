@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import react from '@astrojs/react';
 export default {
+	darkMode: 'class',
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		patterns: {
@@ -24,15 +25,15 @@ export default {
 				24: "6rem",
 				32: "8rem",
 			}
-   		}
- 	},
+		}
+	},
 	plugins: [
 		require('tailwindcss-bg-patterns'),
 	],
- 
+
 	integrations: [
 		react({
-		  include: ['**/react/*'],
+			include: ['**/react/*'],
 		}),
 	],
 
