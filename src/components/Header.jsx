@@ -113,9 +113,7 @@ const Header = () => {
                         <button onClick={handleExperienceClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap text-sm md:text-base">
                             {t('nav.experience', 'Experiencia')}
                         </button>
-                        <button onClick={handleProjectsClick} className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors whitespace-nowrap text-sm md:text-base">
-                            {t('nav.projects', 'Proyectos')}
-                        </button>
+
 
                         <div className="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 md:mx-2"></div>
 
