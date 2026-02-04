@@ -1,402 +1,746 @@
 ---
-import GlassCard from '../components/GlassCard.astro';
-import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import ShinyText from '../components/ShinyText.jsx';
-import SplitText from '../components/SplitText.jsx';
-import {gsap} from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import TranslatedTimeline from '../components/Timeline/TranslatedTimeline.jsx';
-import { TimelineElement } from '../components/Timeline/TimelineElement.jsx';
-import FlowingMenmu from "../components/Components/FlowingMenu/FlowingMenu.tsx"
-import Squares from '../components/Backgrounds/Squares/Squares.jsx';
-import Header from '../components/Header.jsx';
-import LabelIcon from '@mui/icons-material/Label';
+import GlassCard from "../components/GlassCard.astro";
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ShinyText from "../components/ShinyText.jsx";
+import SplitText from "../components/SplitText.jsx";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import TranslatedTimeline from "../components/Timeline/TranslatedTimeline.jsx";
+import { TimelineElement } from "../components/Timeline/TimelineElement.jsx";
+import FlowingMenmu from "../components/Components/FlowingMenu/FlowingMenu.tsx";
+import Squares from "../components/Backgrounds/Squares/Squares.jsx";
+import Header from "../components/Header.jsx";
+import LabelIcon from "@mui/icons-material/Label";
 
 const base = import.meta.env.BASE_URL;
 
-
 const tagIcons: Record<string, string[]> = {
-    JavaScript:[ `${base}tagIcons/js.svg`],
-    CSS: [`${base}tagIcons/css.svg`],  
-    Python:[ `${base}tagIcons/python.svg`, `${base}tagIcons/pyplot.svg`],
-    PyPlot:[ `${base}tagIcons/pyplot.svg`],  
-    Qiskit: [`${base}tagIcons/qiskit.svg`],
-    HTML: [`${base}tagIcons/html.svg`],
-    SQL: [`${base}tagIcons/sql.svg`],
-	GitHub:[ `${base}tagIcons/github.svg`],
+	JavaScript: [`${base}tagIcons/js.svg`],
+	CSS: [`${base}tagIcons/css.svg`],
+	Python: [`${base}tagIcons/python.svg`, `${base}tagIcons/pyplot.svg`],
+	PyPlot: [`${base}tagIcons/pyplot.svg`],
+	Qiskit: [`${base}tagIcons/qiskit.svg`],
+	HTML: [`${base}tagIcons/html.svg`],
+	SQL: [`${base}tagIcons/sql.svg`],
+	GitHub: [`${base}tagIcons/github.svg`],
 	C: [`${base}tagIcons/c.svg`],
-	React: [`${base}tagIcons/react.svg`],
-	Web: [`${base}tagIcons/js.svg` , `${base}tagIcons/html.svg`, `${base}tagIcons/css.svg`],
-	Java: [`${base}tagIcons/java.svg`]
-}
-const tags = [ "Web", "Python", "SQL", "GitHub", "React", "C", "Java" ];
-
-
+	React: [`${base}tagIcons/react.svg`, `${base}tagIcons/redux.svg`],
+	Web: [
+		`${base}tagIcons/js.svg`,
+		`${base}tagIcons/html.svg`,
+		`${base}tagIcons/css.svg`,
+	],
+	Java: [`${base}tagIcons/java.svg`],
+};
+const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 ---
 
-<Layout  title="Amets Martiarena">
+<Layout title="Amets Martiarena">
 	<!-- Hero Section with Squares Background -->
 	<section class="relative min-h-screen flex flex-col overflow-hidden">
 		<!-- Squares Background - Only for Hero Section -->
 		<div class="absolute inset-0 bg-slate-900">
-			<Squares 
-				direction="diagonal" 
-				speed={0.5} 
-				borderColor="oklch(0.446 0.043 257.281)" 
-				squareSize={40} 
+			<Squares
+				direction="diagonal"
+				speed={0.5}
+				borderColor="oklch(0.446 0.043 257.281)"
+				squareSize={40}
 				hoverFillColor="rgba(0,1,0,0)"
 				client:load
 			/>
 		</div>
-		
+
 		<!-- Header -->
-		 <div class="flex justify-center">
+		<div class="flex justify-center">
 			<Header client:load />
 		</div>
 		<!-- Hero Content -->
 		<div class="relative z-10 flex-1 flex items-center justify-center px-4">
 			<div class="text-center space-y-8">
-			<!-- Name with ShinyText -->
-			<div class="mb-8 hero-name">
-				<p class="text-6xl md:text-8xl font-black text-slate-800 dark:text-slate-300">
-					Amets Martiarena
-				</p>
-			</div>
-			
-			<!-- Contact Information -->
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-				<!-- Phone -->
-				<div class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-600 dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-					</svg>
-					<span class="text-slate-700 dark:text-slate-300 font-medium">688 73 63 86</span>
-				</div>
-				
-				<!-- Email -->
-				<div class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30">
-					<a href="mailto:ametsmarti7@gmail.com" class="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-						<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-							<polyline points="22,6 12,13 2,6"></polyline>
-						</svg>
-						<span class="font-medium">ametsmarti7@gmail.com</span>
-					</a>
-				</div>
-				
-				<!-- Location -->
-				<div class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30 md:col-span-2">
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-slate-600 dark:text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-						<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-						<circle cx="12" cy="10" r="3"></circle>
-					</svg>
-					<a href="https://www.google.com/maps/place/20400+Ibarra,+Guip%C3%BAzcoa/@43.1313859,-2.0738193,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd504c9dc988ba3d:0xf7b50ab471df9060!8m2!3d43.1322604!4d-2.0662896!16s%2Fg%2F11bc6v_62c?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D" class="text-slate-700 dark:text-slate-300 font-medium dark:hover:text-slate-100">Ibarra, Gipuzkoa</a>
-				</div>
-
-				<!-- GitHub -->
-				<div class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30 md:col-span-2">
-					<img src={`${base}tagIcons/github.svg`} alt="GitHub Icon" class="w-5 h-5 ">
-				
-					<a href="https://github.com/AmetsMarti"	 class="text-slate-700 dark:text-slate-300 font-medium hover:text-slate-900 dark:hover:text-white transition-colors">
-						GitHub / AmetsMarti
-					</a>
-				</div>
-			</div>
-			
-			<!-- Scroll indicator -->
-			<div class="scroll-indicator animate-bounce mt-12">
-				<svg class="w-6 h-6 mx-auto text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-				</svg>
-			</div>
-		</div>
-	</section>
-	<div class="bg-slate-50 dark:bg-slate-900 border-t border-slate-300 dark:border-slate-600">
-		<!-- Timeline Section with Different Background -->
-		<section class="timeline-section min-h-screen py-20 px-4">
-			<div class="max-w-7xl mx-auto">
-				<!-- Section Title -->
-				<div class="text-center mb-16">
-					<h2 class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4" data-i18n="timeline.title">
-						Mi Trayectoria
-					</h2>
-					<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="timeline.subtitle">
-						Un recorrido por mi formación académica y experiencia profesional
+				<!-- Name with ShinyText -->
+				<div class="mb-8 hero-name">
+					<p
+						class="text-6xl md:text-8xl font-black text-slate-800 dark:text-slate-300"
+					>
+						Amets Martiarena
 					</p>
 				</div>
 
-				<div class="grid lg:grid-cols-3 gap-12 items-start">
-					<!-- Timeline Column -->
-					<div class="lg:col-span-2">
-						<TranslatedTimeline 
-							client:load
-							orientation="vertical"
-							activeColor="#8B5CF6"
-							lineColor="#475569"
-							stepSize={10}
-							className="w-full"
-						/>
+				<!-- Contact Information -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto"
+				>
+					<!-- Phone -->
+					<div
+						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="w-5 h-5 text-slate-600 dark:text-slate-400"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path
+								d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+							></path>
+						</svg>
+						<span
+							class="text-slate-700 dark:text-slate-300 font-medium"
+							>688 73 63 86</span
+						>
 					</div>
-					
-					<!-- Certifications Column -->
-					<div class="lg:col-span-1">
-						<div class="sticky top-8">
-							<h3 class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6" data-i18n="timeline.certifications.title">
-								Certificaciones
-							</h3>
-							<div class="space-y-4">
-								<div class="group p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-600/50 hover:bg-white/70 dark:hover:bg-slate-800/70 transition-all duration-300 hover:shadow-lg hover:scale-105">
-									<div class="flex items-center gap-3">
-										<div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center">
-											<LabelIcon sx={{
-												color: '#3B82F6',
-												fontSize: '20px'
-											}}/>
-										</div>
-										<div>
-											<h4 class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="timeline.certifications.english.title">
-												B2 Inglés
-											</h4>
-											<p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="timeline.certifications.english.subtitle">
-												Escuela Oficial de Idiomas
-											</p>
-										</div>
-									</div>
-								</div>
-								
-								<div class="group p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-600/50 hover:bg-white/70 dark:hover:bg-slate-800/70 transition-all duration-300 hover:shadow-lg hover:scale-105">
-									<div class="flex items-center gap-3">
-										<div class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center">
-											<LabelIcon sx={{
-												color: '#10B981',
-												fontSize: '20px'
-											}}/>
-										</div>
-										<div>
-											<h4 class="font-semibold text-slate-800 dark:text-slate-200" data-i18n="timeline.certifications.bachillerato.title">
-												Título de Bachillerato
-											</h4>
-											<p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="timeline.certifications.bachillerato.subtitle">
-												Modalidad Científico-Tecnológica
-											</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<!-- Additional Info Card -->
-							<div class="mt-8 p-6 rounded-xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-200/20 dark:border-purple-600/20">
-								<h4 class="font-semibold text-slate-800 dark:text-slate-200 mb-3" data-i18n="timeline.certifications.learning.title">
-									En constante aprendizaje
-								</h4>
-								<p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="timeline.certifications.learning.description">
-									Siempre buscando nuevas oportunidades para crecer profesionalmente y expandir mis conocimientos en tecnología.
-								</p>
-							</div>
-						</div>
+
+					<!-- Email -->
+					<div
+						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30"
+					>
+						<a
+							href="mailto:ametsmarti7@gmail.com"
+							class="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="w-5 h-5"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path
+									d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+								></path>
+								<polyline points="22,6 12,13 2,6"></polyline>
+							</svg>
+							<span class="font-medium"
+								>ametsmarti7@gmail.com</span
+							>
+						</a>
+					</div>
+
+					<!-- Location -->
+					<div
+						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30 md:col-span-2"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="w-5 h-5 text-slate-600 dark:text-slate-400"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path
+								d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+							></path>
+							<circle cx="12" cy="10" r="3"></circle>
+						</svg>
+						<a
+							href="https://www.google.com/maps/place/20400+Ibarra,+Guip%C3%BAzcoa/@43.1313859,-2.0738193,1740m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd504c9dc988ba3d:0xf7b50ab471df9060!8m2!3d43.1322604!4d-2.0662896!16s%2Fg%2F11bc6v_62c?entry=ttu&g_ep=EgoyMDI1MDgwNS4wIKXMDSoASAFQAw%3D%3D"
+							class="text-slate-700 dark:text-slate-300 font-medium dark:hover:text-slate-100"
+							>Ibarra, Gipuzkoa</a
+						>
+					</div>
+
+					<!-- GitHub -->
+					<div
+						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30 md:col-span-2"
+					>
+						<img
+							src={`${base}tagIcons/github.svg`}
+							alt="GitHub Icon"
+							class="w-5 h-5"
+						/>
+
+						<a
+							href="https://github.com/AmetsMarti"
+							class="text-slate-700 dark:text-slate-300 font-medium hover:text-slate-900 dark:hover:text-white transition-colors"
+						>
+							GitHub / AmetsMarti
+						</a>
 					</div>
 				</div>
-			</div>
-		</section>
-	</div>
 
-	<div class="border-t border-slate-300 dark:border-slate-600 " ></div>
-	<!-- Main Content Section with Modern CV Design -->
-	<div class="bg-slate-50 dark:bg-slate-900 relative overflow-hidden pattern-rhombus ">
-		<!-- Background Pattern -->
-		<div class="absolute inset-0 opacity-10 dark:opacity-5">
-			<div class=" w-full h-full"></div>
+				<!-- Scroll indicator -->
+				<div class="scroll-indicator animate-bounce mt-12">
+					<svg
+						class="w-6 h-6 mx-auto text-slate-600 dark:text-slate-400"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+					</svg>
+				</div>
+			</div>
 		</div>
-		
-		<div class="experience container mx-auto px-4 py-20 max-w-6xl relative z-10 ">
-			<!-- CV Section Header -->
-			<div class="text-center mb-16">
-				<h2 class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4" data-i18n="profile.title">
-					Perfil Profesional
-				</h2>
-				<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto" data-i18n="profile.subtitle">
-					Habilidades, conocimientos y áreas de especialización
-				</p>
-			</div>
-
-			<div class="grid lg:grid-cols-2 gap-8 mb-12">
-				<!-- Languages Section -->
-				<section class="cv-section group">
-					<div class="p-8 rounded-2xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50">
-						<div class="flex items-center gap-3 mb-6">
-							<div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center">
-								<svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-								</svg>
-							</div>
-							<h3 data-i18n="profile.languages.title" class="text-2xl font-bold text-slate-800 dark:text-slate-200">Idiomas</h3>
-						</div>
-						
-						<div class="space-y-4">
-							<div class="flex items-center justify-between p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3">
-									<div class="w-3 h-3 bg-green-500 rounded-full"></div>
-									<span data-i18n="profile.languages.euskera.name" class="font-semibold text-slate-700 dark:text-slate-300">Euskera</span>
-								</div>
-								<span  data-i18n="profile.languages.euskera.level" class="text-sm font-medium text-slate-600 dark:text-slate-400 px-3 py-1 bg-green-100 dark:bg-green-900/30 rounded-full">
-									Idioma nativo
-								</span>
-							</div>
-							
-							<div class="flex items-center justify-between p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3">
-									<div class="w-3 h-3 bg-blue-500 rounded-full"></div>
-									<span data-i18n="profile.languages.english.name" class="font-semibold text-slate-700 dark:text-slate-300">Inglés</span>
-								</div>
-								<span data-i18n="profile.languages.english.level" class="text-sm font-medium text-slate-600 dark:text-slate-400 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 rounded-full">
-									Nivel B2
-								</span>
-							</div>
-							
-							<div class="flex items-center justify-between p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3">
-									<div class="w-3 h-3 bg-orange-500 rounded-full"></div>
-									<span data-i18n="profile.languages.spanish.name" class="font-semibold text-slate-700 dark:text-slate-300">Castellano</span>
-								</div>
-								<span data-i18n="profile.languages.spanish.level" class="text-sm font-medium text-slate-600 dark:text-slate-400 px-3 py-1 bg-orange-100 dark:bg-orange-900/30 rounded-full">
-									Nivel alto
-								</span>
-							</div>
-						</div>
+		<div
+			class="bg-slate-50 dark:bg-slate-900 border-t border-slate-300 dark:border-slate-600"
+		>
+			<!-- Timeline Section with Different Background -->
+			<section class="timeline-section min-h-screen py-20 px-4">
+				<div class="max-w-7xl mx-auto">
+					<!-- Section Title -->
+					<div class="text-center mb-16">
+						<h2
+							class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4"
+							data-i18n="timeline.title"
+						>
+							Mi Trayectoria
+						</h2>
+						<p
+							class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto"
+							data-i18n="timeline.subtitle"
+						>
+							Un recorrido por mi formación académica y
+							experiencia profesional
+						</p>
 					</div>
-				</section>
 
-				<!-- Skills Overview -->
-				<section class="cv-section group">
-					<div class="p-8 rounded-2xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50">
-						<div class="flex items-center gap-3 mb-6">
-							<div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center">
-								<svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-								</svg>
-							</div>
-							<h3 data-i18n="profile.knowledge.title" class="text-2xl font-bold text-slate-800 dark:text-slate-200">Conocimientos</h3>
+					<div class="grid lg:grid-cols-3 gap-12 items-start">
+						<!-- Timeline Column -->
+						<div class="lg:col-span-2">
+							<TranslatedTimeline
+								client:load
+								orientation="vertical"
+								activeColor="#8B5CF6"
+								lineColor="#475569"
+								stepSize={10}
+								className="w-full"
+							/>
 						</div>
-						
-						<div class="space-y-4">
-							<div class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3 mb-2">
-									<div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-									<h4 data-i18n="profile.knowledge.oop" class="font-semibold text-slate-800 dark:text-slate-200">Programación orientada a objetos</h4>
-								</div>
-							</div>
-							
-							<div class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3 mb-2">
-									<div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-									<h4 data-i18n="profile.knowledge.algorithms" class="font-semibold text-slate-800 dark:text-slate-200">Diseño de algoritmos y estructuras de datos</h4>
-								</div>
-							</div>
-							
-							<div class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3 mb-2">
-									<div class="w-2 h-2 bg-green-500 rounded-full"></div>
-									<h4 data-i18n="profile.knowledge.software" class="font-semibold text-slate-800 dark:text-slate-200">Ingeniería de software y desarrollo web</h4>
-								</div>
-							</div>
 
-							<div class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3 mb-2">
-									<div class="w-2 h-2 bg-red-500 rounded-full"></div>
-									<h4 data-i18n="profile.knowledge.databases" class="font-semibold text-slate-800 dark:text-slate-200">Bases de datos SQL</h4>
-								</div>
-							</div>
+						<!-- Certifications Column -->
+						<div class="lg:col-span-1">
+							<div class="sticky top-8">
+								<h3
+									class="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6"
+									data-i18n="timeline.certifications.title"
+								>
+									Certificaciones
+								</h3>
+								<div class="space-y-4">
+									<div
+										class="group p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-600/50 hover:bg-white/70 dark:hover:bg-slate-800/70 transition-all duration-300 hover:shadow-lg hover:scale-105"
+									>
+										<div class="flex items-center gap-3">
+											<div
+												class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center"
+											>
+												<LabelIcon
+													sx={{
+														color: "#3B82F6",
+														fontSize: "20px",
+													}}
+												/>
+											</div>
+											<div>
+												<h4
+													class="font-semibold text-slate-800 dark:text-slate-200"
+													data-i18n="timeline.certifications.english.title"
+												>
+													B2 Inglés
+												</h4>
+												<p
+													class="text-sm text-slate-600 dark:text-slate-400"
+													data-i18n="timeline.certifications.english.subtitle"
+												>
+													Escuela Oficial de Idiomas
+												</p>
+											</div>
+										</div>
+									</div>
 
-							<div class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3 mb-2">
-									<div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
-									<h4 data-i18n="profile.knowledge.graphics" class="font-semibold text-slate-800 dark:text-slate-200">Gráficos y shaders</h4>
-								</div>
-							</div>
+									<div
+										class="group p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-600/50 hover:bg-white/70 dark:hover:bg-slate-800/70 transition-all duration-300 hover:shadow-lg hover:scale-105"
+									>
+										<div class="flex items-center gap-3">
+											<div
+												class="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center"
+											>
+												<LabelIcon
+													sx={{
+														color: "#10B981",
+														fontSize: "20px",
+													}}
+												/>
+											</div>
+											<div>
+												<h4
+													class="font-semibold text-slate-800 dark:text-slate-200"
+													data-i18n="timeline.certifications.bachillerato.title"
+												>
+													Título de Bachillerato
+												</h4>
+												<p
+													class="text-sm text-slate-600 dark:text-slate-400"
+													data-i18n="timeline.certifications.bachillerato.subtitle"
+												>
+													Modalidad
+													Científico-Tecnológica
+												</p>
+											</div>
+										</div>
+									</div>
 
-							<div class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30">
-								<div class="flex items-center gap-3 mb-2">
-									<div class="w-2 h-2 bg-indigo-500 rounded-full"></div>
-									<h4 data-i18n="profile.knowledge.ai" class="font-semibold text-slate-800 dark:text-slate-200">Inteligencia Artificial y Minería de Datos</h4>
+									<div
+										class="group p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-600/50 hover:bg-white/70 dark:hover:bg-slate-800/70 transition-all duration-300 hover:shadow-lg hover:scale-105"
+									>
+										<div class="flex items-center gap-3">
+											<div
+												class="w-10 h-10 rounded-lg bg-red-500/20 flex items-center justify-center"
+											>
+												<LabelIcon
+													sx={{
+														color: "#f87171",
+														fontSize: "20px",
+													}}
+												/>
+											</div>
+											<div>
+												<h4
+													class="font-semibold text-slate-800 dark:text-slate-200"
+													data-i18n="timeline.certifications.italian.title"
+												>
+													Título A1 Italiano
+												</h4>
+												<p
+													class="text-sm text-slate-600 dark:text-slate-400"
+													data-i18n="timeline.certifications.italian.subtitle"
+												>
+													La Sapienza
+												</p>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-				</section>
-			</div>
-
-			<!-- Technical Skills Section -->
-			<section class="cv-section">
-				<div class="p-8 rounded-2xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-xl transition-all duration-300">
-					<div class="flex items-center gap-3 mb-8">
-						<div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center">
-							<svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-							</svg>
-						</div>
-						<h3 data-i18n="profile.tech.title" class="text-2xl font-bold text-slate-800 dark:text-slate-200">Stack Tecnológico</h3>
-					</div>
-					
-					<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-						{tags.map((tag: string) => (
-							<div class="group relative">
-								<div class="skill-tag flex flex-col items-center p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30 hover:bg-white dark:hover:bg-slate-600/70 hover:shadow-lg hover:scale-105 transition-all duration-300">
-									<div class="flex items-center justify-center mb-2">	
-										{ tagIcons[tag] && tagIcons[tag].map((iconUrl:string) => (
-											<img src={iconUrl} alt={`${iconUrl} icon`} class="w-8 h-8 mb" />
-										))}
-									</div>	
-									<span class="text-sm font-semibold text-slate-700 dark:text-slate-300 text-center">{tag}</span>
-								</div>
-							</div>
-						))}
 					</div>
 				</div>
 			</section>
 		</div>
-	</div>
-		<div class="border-t border-slate-300 dark:border-slate-600 ">
-			<!-- Projects Section -->
-			<section class="projects my-16 ">
-				<div class="text-center mb-12">
-					<h2 data-i18n="projects.title" class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4">Mis Proyectos</h2>
-					<p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto">
-						
+
+		<div class="border-t border-slate-300 dark:border-slate-600"></div>
+		<!-- Main Content Section with Modern CV Design -->
+		<div
+			class="bg-slate-50 dark:bg-slate-900 relative overflow-hidden pattern-rhombus"
+		>
+			<!-- Background Pattern -->
+			<div class="absolute inset-0 opacity-10 dark:opacity-5">
+				<div class="w-full h-full"></div>
+			</div>
+
+			<div
+				class="experience container mx-auto px-4 py-20 max-w-6xl relative z-10"
+			>
+				<!-- CV Section Header -->
+				<div class="text-center mb-16">
+					<h2
+						class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4"
+						data-i18n="profile.title"
+					>
+						Perfil Profesional
+					</h2>
+					<p
+						class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto"
+						data-i18n="profile.subtitle"
+					>
+						Habilidades, conocimientos y áreas de especialización
 					</p>
 				</div>
-				
-				<div class="grid place-items-center grid-flow-row gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+
+				<div class="grid lg:grid-cols-2 gap-8 mb-12">
+					<!-- Languages Section -->
+					<section class="cv-section group">
+						<div
+							class="p-8 rounded-2xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50"
+						>
+							<div class="flex items-center gap-3 mb-6">
+								<div
+									class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center"
+								>
+									<svg
+										class="w-6 h-6 text-blue-600 dark:text-blue-400"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+										></path>
+									</svg>
+								</div>
+								<h3
+									data-i18n="profile.languages.title"
+									class="text-2xl font-bold text-slate-800 dark:text-slate-200"
+								>
+									Idiomas
+								</h3>
+							</div>
+
+							<div class="space-y-4">
+								<div
+									class="flex items-center justify-between p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-3 h-3 bg-green-500 rounded-full"
+										>
+										</div>
+										<span
+											data-i18n="profile.languages.euskera.name"
+											class="font-semibold text-slate-700 dark:text-slate-300"
+											>Euskera</span
+										>
+									</div>
+									<span
+										data-i18n="profile.languages.euskera.level"
+										class="text-sm font-medium text-slate-600 dark:text-slate-400 px-3 py-1 bg-green-100 dark:bg-green-900/30 rounded-full"
+									>
+										Idioma nativo
+									</span>
+								</div>
+
+								<div
+									class="flex items-center justify-between p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-3 h-3 bg-blue-500 rounded-full"
+										>
+										</div>
+										<span
+											data-i18n="profile.languages.english.name"
+											class="font-semibold text-slate-700 dark:text-slate-300"
+											>Inglés</span
+										>
+									</div>
+									<span
+										data-i18n="profile.languages.english.level"
+										class="text-sm font-medium text-slate-600 dark:text-slate-400 px-3 py-1 bg-blue-100 dark:bg-blue-900/30 rounded-full"
+									>
+										Nivel B2
+									</span>
+								</div>
+
+								<div
+									class="flex items-center justify-between p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-3 h-3 bg-orange-500 rounded-full"
+										>
+										</div>
+										<span
+											data-i18n="profile.languages.spanish.name"
+											class="font-semibold text-slate-700 dark:text-slate-300"
+											>Castellano</span
+										>
+									</div>
+									<span
+										data-i18n="profile.languages.spanish.level"
+										class="text-sm font-medium text-slate-600 dark:text-slate-400 px-3 py-1 bg-orange-100 dark:bg-orange-900/30 rounded-full"
+									>
+										Nivel alto
+									</span>
+								</div>
+
+								<div
+									class="flex items-center justify-between p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-3 h-3 bg-red-500 rounded-full"
+										>
+										</div>
+										<span
+											data-i18n="profile.languages.italian.name"
+											class="font-semibold text-slate-700 dark:text-slate-300"
+											>Italiano</span
+										>
+									</div>
+									<span
+										data-i18n="profile.languages.italian.level"
+										class="text-sm font-medium text-slate-600 dark:text-slate-400 px-3 py-1 bg-red-100 dark:bg-red-900/30 rounded-full"
+									>
+										Nivel A1
+									</span>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- Skills Overview -->
+					<section class="cv-section group">
+						<div
+							class="p-8 rounded-2xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50"
+						>
+							<div class="flex items-center gap-3 mb-6">
+								<div
+									class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center"
+								>
+									<svg
+										class="w-6 h-6 text-purple-600 dark:text-purple-400"
+										fill="none"
+										stroke="currentColor"
+										viewBox="0 0 24 24"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+										></path>
+									</svg>
+								</div>
+								<h3
+									data-i18n="profile.knowledge.title"
+									class="text-2xl font-bold text-slate-800 dark:text-slate-200"
+								>
+									Conocimientos
+								</h3>
+							</div>
+
+							<div class="space-y-4">
+								<div
+									class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-2 h-2 bg-purple-500 rounded-full"
+										>
+										</div>
+										<h4
+											data-i18n="profile.knowledge.oop"
+											class="font-semibold text-slate-800 dark:text-slate-200"
+										>
+											Programación orientada a objetos
+										</h4>
+									</div>
+								</div>
+
+								<div
+									class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-2 h-2 bg-blue-500 rounded-full"
+										>
+										</div>
+										<h4
+											data-i18n="profile.knowledge.algorithms"
+											class="font-semibold text-slate-800 dark:text-slate-200"
+										>
+											Diseño de algoritmos y estructuras
+											de datos
+										</h4>
+									</div>
+								</div>
+
+								<div
+									class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-2 h-2 bg-green-500 rounded-full"
+										>
+										</div>
+										<h4
+											data-i18n="profile.knowledge.software"
+											class="font-semibold text-slate-800 dark:text-slate-200"
+										>
+											Ingeniería de software y desarrollo
+											web
+										</h4>
+									</div>
+								</div>
+
+								<div
+									class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-2 h-2 bg-red-500 rounded-full"
+										>
+										</div>
+										<h4
+											data-i18n="profile.knowledge.databases"
+											class="font-semibold text-slate-800 dark:text-slate-200"
+										>
+											Bases de datos SQL
+										</h4>
+									</div>
+								</div>
+
+								<div
+									class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-2 h-2 bg-yellow-500 rounded-full"
+										>
+										</div>
+										<h4
+											data-i18n="profile.knowledge.graphics"
+											class="font-semibold text-slate-800 dark:text-slate-200"
+										>
+											Gráficos y shaders
+										</h4>
+									</div>
+								</div>
+
+								<div
+									class="p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-2 h-2 bg-indigo-500 rounded-full"
+										>
+										</div>
+										<h4
+											data-i18n="profile.knowledge.ai"
+											class="font-semibold text-slate-800 dark:text-slate-200"
+										>
+											Inteligencia Artificial y Minería de
+											Datos
+										</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<!-- Technical Skills Section -->
+				<section class="cv-section">
+					<div
+						class="p-8 rounded-2xl bg-white/70 dark:bg-slate-800/70 backdrop-blur-sm border border-slate-200/50 dark:border-slate-700/50 hover:shadow-xl transition-all duration-300"
+					>
+						<div class="flex items-center gap-3 mb-8">
+							<div
+								class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center"
+							>
+								<svg
+									class="w-6 h-6 text-emerald-600 dark:text-emerald-400"
+									fill="none"
+									stroke="currentColor"
+									viewBox="0 0 24 24"
+								>
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+									></path>
+								</svg>
+							</div>
+							<h3
+								data-i18n="profile.tech.title"
+								class="text-2xl font-bold text-slate-800 dark:text-slate-200"
+							>
+								Stack Tecnológico
+							</h3>
+						</div>
+
+						<div
+							class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+						>
+							{
+								tags.map((tag: string) => (
+									<div class="group relative">
+										<div class="skill-tag flex flex-col items-center p-4 rounded-xl bg-slate-50/80 dark:bg-slate-700/50 border border-slate-200/30 dark:border-slate-600/30 hover:bg-white dark:hover:bg-slate-600/70 hover:shadow-lg hover:scale-105 transition-all duration-300">
+											<div class="flex items-center justify-center mb-2">
+												{tagIcons[tag] &&
+													tagIcons[tag].map(
+														(iconUrl: string) => (
+															<img
+																src={iconUrl}
+																alt={`${iconUrl} icon`}
+																class="w-8 h-8 mb"
+															/>
+														),
+													)}
+											</div>
+											<span class="text-sm font-semibold text-slate-700 dark:text-slate-300 text-center">
+												{tag}
+											</span>
+										</div>
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="border-t border-slate-300 dark:border-slate-600">
+			<!-- Projects Section -->
+			<section class="projects my-16">
+				<div class="text-center mb-12">
+					<h2
+						data-i18n="projects.title"
+						class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4"
+					>
+						Mis Proyectos
+					</h2>
+					<p
+						class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto"
+					>
+					</p>
+				</div>
+
+				<div
+					class="grid place-items-center grid-flow-row gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2"
+				>
 					<div class="project-card">
-						<ProjectCard name="Calculator" 
+						<ProjectCard
+							name="Calculator"
 							titleKey="projects.calculator.name"
-							desc="Calculadora simple desarrollada para web" 
-							descKey ="projects.calculator.description"
+							desc="Calculadora simple desarrollada para web"
+							descKey="projects.calculator.description"
 							href="https://www.github.com/AmetsMarti/Calculator"
 							image_url="calculator_thumbnail.jpg"
 							width="300"
 							height="200"
 							alt="Miniatura de la calculadora"
-							tags={["JavaScript","HTML","CSS"]} />
+							tags={["JavaScript", "HTML", "CSS"]}
+						/>
 					</div>
 
-					
 					<div class="project-card">
-						<ProjectCard name ="TheDB"
+						<ProjectCard
+							name="TheDB"
 							titleKey="projects.thedb.name"
 							descKey="projects.thedb.description"
-							tags={["JavaScript", "HTML", "CSS", 'SQL']}	
+							tags={["JavaScript", "HTML", "CSS", "SQL"]}
 							href="https://www.github.com/AmetsMarti/TheDB"
 							alt="Miniatura de TheDB"
 							desc="Aplicacion web para gestionar una base de datos de libros"
 							image_url="thedb_thumbnail.png"
-							width="20"			
-							height="20"		
-							/>
+							width="20"
+							height="20"
+						/>
 					</div>
-						
+
 					<div class="project-card">
-						<ProjectCard name = "Computer Graphics 3D engine"
+						<ProjectCard
+							name="Computer Graphics 3D engine"
 							titleKey="projects.engine3d.name"
 							descKey="projects.engine3d.description"
 							tags={["C"]}
@@ -405,12 +749,13 @@ const tags = [ "Web", "Python", "SQL", "GitHub", "React", "C", "Java" ];
 							desc="Un motor 3D desarrollado en la asignatura de Gráficos por Computadora en la universidad, es puramente para fines educativos y explora diferentes funcionalidades como transformaciones, iluminación y cámaras."
 							image_url="3d_engine_thumbnail.png"
 							width="20"
-							height="20"	
+							height="20"
 						/>
 					</div>
-					
+
 					<div class="project-card">
-						<ProjectCard name = "React map Generator"
+						<ProjectCard
+							name="React map Generator"
 							titleKey="projects.reactMap.name"
 							descKey="projects.reactMap.description"
 							tags={["React", "JavaScript", "HTML", "CSS"]}
@@ -419,42 +764,66 @@ const tags = [ "Web", "Python", "SQL", "GitHub", "React", "C", "Java" ];
 							desc="Implementacion del generador de mapas en React"
 							image_url="map_generator_next_thumbnail.png"
 							width="20"
-							height="20"	
+							height="20"
 						/>
 					</div>
 				</div>
 			</section>
-	</div>
+		</div>
+	</section>
+
+	<style>
+		.pattern-rhombus {
+			background-color: transparent;
+			opacity: 1;
+			background-image:
+				linear-gradient(
+					135deg,
+					rgba(54, 68, 92, 0.3) 25%,
+					transparent 25%
+				),
+				linear-gradient(
+					225deg,
+					rgba(54, 68, 92, 0.3) 25%,
+					transparent 25%
+				),
+				linear-gradient(
+					45deg,
+					rgba(54, 68, 92, 0.3) 25%,
+					transparent 25%
+				),
+				linear-gradient(
+					315deg,
+					rgba(54, 68, 92, 0.3) 25%,
+					transparent 25%
+				);
+			background-position:
+				50px 0,
+				50px 0,
+				0 0,
+				0 0;
+			background-size: 50px 50px;
+			background-repeat: repeat;
+		}
+	</style>
+
+	<script>
+		function updateTranslations() {
+			const elementsToTranslate =
+				document.querySelectorAll("[data-i18n]");
+
+			elementsToTranslate.forEach((element) => {
+				const key = element.getAttribute("data-i18n");
+				if (key && window.t) {
+					element.textContent = window.t(key);
+				}
+			});
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+			setTimeout(updateTranslations, 100);
+		});
+
+		document.addEventListener("languageChanged", updateTranslations);
+	</script>
 </Layout>
-
-<style>
-	.pattern-rhombus {
-		background-color: transparent;
-		opacity: 1;
-		background-image:  linear-gradient(135deg, rgba(54, 68, 92, 0.3) 25%, transparent 25%), linear-gradient(225deg, rgba(54, 68, 92, 0.3) 25%, transparent 25%), linear-gradient(45deg, rgba(54, 68, 92, 0.3) 25%, transparent 25%), linear-gradient(315deg, rgba(54, 68, 92, 0.3) 25%, transparent 25%);
-		background-position:  50px 0, 50px 0, 0 0, 0 0;
-		background-size: 50px 50px;
-		background-repeat: repeat;
-	}
-</style>
-
-<script>
-  function updateTranslations() {
-    const elementsToTranslate = document.querySelectorAll('[data-i18n]');
-    
-    elementsToTranslate.forEach(element => {
-      const key = element.getAttribute('data-i18n');
-      if (key && window.t) {
-        element.textContent = window.t(key);
-      }
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(updateTranslations, 100);
-  });
-
-  document.addEventListener('languageChanged', updateTranslations);
-</script>
-
-

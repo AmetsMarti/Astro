@@ -14,21 +14,21 @@ const TranslatedTimeline = (props) => {
     };
 
     const steps = [
-      { 
+      {
         content: {
           title: t('timeline.education.primary.title', 'Educación Primaria'),
-          subtitle: t('timeline.education.primary.subtitle', 'Uzturpe Ikastola, Ibarra'), 
+          subtitle: t('timeline.education.primary.subtitle', 'Uzturpe Ikastola, Ibarra'),
           date: t('timeline.education.primary.date', '2010-2016')
         }
       },
-      { 
+      {
         content: {
           title: t('timeline.education.bachillerato.title', 'Bachillerato Científico'),
           subtitle: t('timeline.education.bachillerato.subtitle', 'Orixe BHI, Tolosa'),
           date: t('timeline.education.bachillerato.date', '2020-2022')
         }
       },
-      { 
+      {
         content: {
           title: t('timeline.education.university.title', 'Ingeniería Informática (En curso)'),
           subtitle: t('timeline.education.university.subtitle', 'Universidad - 3er año, Computación'),
@@ -36,14 +36,21 @@ const TranslatedTimeline = (props) => {
         }
       },
       {
-        content : {
-          title : t('timeline.education.internship.title', 'Prácticas en Developair Technologies'),
+        content: {
+          title: t('timeline.education.exchange.title', 'Intercambio Erasmus'),
+          subtitle: t('timeline.education.exchange.subtitle', 'La Sapienza, Roma'),
+          date: t('timeline.education.exchange.date', '2024-2025')
+        }
+      },
+      {
+        content: {
+          title: t('timeline.education.internship.title', 'Prácticas en Developair Technologies'),
           subtitle: t('timeline.education.internship.subtitle', 'Desarrollador Web - Frontend'),
           date: t('timeline.education.internship.date', '2025-06-02 - 2025-07-24')
         }
       }
     ];
-    
+
     setTimelineSteps(steps);
   };
 
