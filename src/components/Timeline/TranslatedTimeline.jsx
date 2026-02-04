@@ -30,21 +30,6 @@ const TranslatedTimeline = (props) => {
       },
       {
         content: {
-          title: t('timeline.education.university.title', 'Ingeniería Informática (En curso)'),
-          subtitle: t('timeline.education.university.subtitle', 'Universidad - 3er año, Computación'),
-          date: t('timeline.education.university.date', '2022-...')
-        }
-      },
-
-      {
-        content: {
-          title: t('timeline.education.exchange.title', 'Intercambio Erasmus'),
-          subtitle: t('timeline.education.exchange.subtitle', 'La Sapienza, Roma'),
-          date: t('timeline.education.exchange.date', '2024-2025')
-        }
-      },
-      {
-        content: {
           title: t('timeline.education.internship.title', 'Prácticas en Developair Technologies'),
           subtitle: t('timeline.education.internship.subtitle', 'Desarrollador Web - Frontend'),
           date: t('timeline.education.internship.date', '2025-06-02 - 2025-07-24')
@@ -52,11 +37,18 @@ const TranslatedTimeline = (props) => {
       },
       {
         content: {
-          title: t('timeline.education.sapienza.title', 'Erasmus en La Sapienza Università di Roma'),
-          subtitle: t('timeline.education.sapienza.subtitle', 'Ingeniería Informática'),
-          date: t('timeline.education.sapienza.date', '2024-2025')
+          title: t('timeline.education.exchange.title', 'Intercambio en La Sapienza Universitá di Roma'),
+          subtitle: t('timeline.education.exchange.subtitle', 'La Sapienza, Roma'),
+          date: t('timeline.education.exchange.date', '2024-2025')
         }
       },
+      {
+        content: {
+          title: t('timeline.education.final_year.title', 'Cuarto año de Ingeniería Informática (En curso)'),
+          subtitle: t('timeline.education.final_year.subtitle', 'Ingeniería Informática - Especialidad Computación'),
+          date: t('timeline.education.final_year.date', '2025-...')
+        }
+      }
     ];
 
     setTimelineSteps(steps);

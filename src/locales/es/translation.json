@@ -31,7 +31,7 @@
         "date": "2022-..."
       },
       "exchange": {
-        "title": "Intercambio Erasmus",
+        "title": "Intercambio en La Sapienza Università di Roma",
         "subtitle": "La Sapienza, Roma",
         "date": "2024-2025"
       },
@@ -39,6 +39,11 @@
         "title": "Prácticas en Developair Technologies",
         "subtitle": "Desarrollador Web - Frontend",
         "date": "2025-06-02 - 2025-07-24"
+      },
+      "final_year": {
+        "title": "Cuarto año de Ingeniería Informática (En curso)",
+        "subtitle": "Ingeniería Informática - Especialidad Computación",
+        "date": "2025-..."
       }
     },
     "certifications": {

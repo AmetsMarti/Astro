@@ -31,7 +31,7 @@
         "date": "2022-..."
       },
       "exchange": {
-        "title": "Erasmus Exchange",
+        "title": "Exchange in La Sapienza Università di Roma",
         "subtitle": "La Sapienza, Rome",
         "date": "2024-2025"
       },
@@ -39,6 +39,11 @@
         "title": "Internship at Developair Technologies",
         "subtitle": "Web Developer - Frontend",
         "date": "2025-06-02 - 2025-07-24"
+      },
+      "final_year": {
+        "title": "Fourth Year of CS (In progress)",
+        "subtitle": "Computer Engineering - Computing Specialty",
+        "date": "2025-..."
       }
     },
     "certifications": {

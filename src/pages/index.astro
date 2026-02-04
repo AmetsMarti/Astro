@@ -4,7 +4,6 @@ import Layout from "../layouts/Layout.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ShinyText from "../components/ShinyText.jsx";
 import SplitText from "../components/SplitText.jsx";
-import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TranslatedTimeline from "../components/Timeline/TranslatedTimeline.jsx";
 import { TimelineElement } from "../components/Timeline/TimelineElement.jsx";
@@ -44,7 +43,7 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 			<Squares
 				direction="diagonal"
 				speed={0.5}
-				borderColor="oklch(0.446 0.043 257.281)"
+				borderColor="dark:oklch(0.446 0.043 257.281) oklch(0.446 0.043 257.281)"
 				squareSize={40}
 				hoverFillColor="rgba(0,1,0,0)"
 				client:load
@@ -73,7 +72,7 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 				>
 					<!-- Phone -->
 					<div
-						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30"
+						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-300 dark:border-slate-600/30"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +96,7 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 
 					<!-- Email -->
 					<div
-						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30"
+						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-300 dark:border-slate-600/30"
 					>
 						<a
 							href="mailto:ametsmarti7@gmail.com"
@@ -126,7 +125,7 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 
 					<!-- Location -->
 					<div
-						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30 md:col-span-2"
+						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-300 dark:border-slate-600/30 md:col-span-2"
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +151,7 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 
 					<!-- GitHub -->
 					<div
-						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-200/20 dark:border-slate-600/30 md:col-span-2"
+						class="contact-card flex items-center justify-center gap-3 p-4 rounded-lg bg-white/10 dark:bg-slate-800/30 backdrop-blur-sm border border-slate-300 dark:border-slate-600/30 md:col-span-2"
 					>
 						<img
 							src={`${base}tagIcons/github.svg`}
@@ -218,7 +217,7 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 							orientation="vertical"
 							activeColor="#8B5CF6"
 							lineColor="#475569"
-							stepSize={10}
+							stepSize={8}
 							className="w-full"
 						/>
 					</div>
@@ -698,22 +697,22 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 			background-image:
 				linear-gradient(
 					135deg,
-					rgba(54, 68, 92, 0.3) 25%,
+					rgba(54, 68, 92, 0.2) 25%,
 					transparent 25%
 				),
 				linear-gradient(
 					225deg,
-					rgba(54, 68, 92, 0.3) 25%,
+					rgba(54, 68, 92, 0.2) 25%,
 					transparent 25%
 				),
 				linear-gradient(
 					45deg,
-					rgba(54, 68, 92, 0.3) 25%,
+					rgba(54, 68, 92, 0.2) 25%,
 					transparent 25%
 				),
 				linear-gradient(
 					315deg,
-					rgba(54, 68, 92, 0.3) 25%,
+					rgba(54, 68, 92, 0.2) 25%,
 					transparent 25%
 				);
 			background-position:

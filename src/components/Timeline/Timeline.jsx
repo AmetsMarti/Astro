@@ -144,9 +144,9 @@ const Timeline = ({
       <style jsx>{`
         .timeline-container {
           position:sticky;
-          padding: 2rem 0;
+          padding: 0.5rem 0;
           top: 20px;
-          margin-bottom: 100px;
+          margin-bottom: 20px;
         }
 
         .timeline-line {
@@ -183,13 +183,13 @@ const Timeline = ({
         .timeline-container.vertical .timeline-steps {
           display: flex;
           flex-direction: column;
-          gap: 3rem;
+          gap: 1.5rem;
         }
 
         .timeline-container.horizontal .timeline-steps {
           display: flex;
           flex-direction: row;
-          gap: 3rem;
+          gap: 1.5rem;
           align-items: flex-start;
         }
 
