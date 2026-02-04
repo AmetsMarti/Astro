@@ -1,50 +1,88 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import {Header} from '../components/Header.jsx';
-import Footer from '../components/Footer.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import Layout from "../layouts/Layout.astro";
+import { Header } from "../components/Header.jsx";
+import Footer from "../components/Footer.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
-	
-	<main class="">
-		
-		<section class="flex-wrap justify-center">
-				<div class="grid place-items-center grid-flow-row gap-8 grid-cols-1  md:grid-cols-2 xl:grid-cols-3 2xl:px-40 py-28 ">
-					<ProjectCard name="Calculator" 
-						desc="Una calculadora simple hecha con HTML, CSS y JavaScript. Implementa un interruptor dinámico de tema claro/oscuro." 
-						href="https://www.github.com/AmetsMarti/Calculator"
-						image_url="calculator_thumbnail.jpg"
-						width="300"
-						height="200"
-						alt="Miniatura de la calculadora"
-						tags={["JavaScript","HTML","CSS"]} />
 
-					<ProjectCard name ="TheDB"
-						tags={["JavaScript", "HTML", "CSS", 'SQL']}	
-						href="https://www.github.com/AmetsMarti/TheDB"
-						alt="Miniatura de TheDB"
-						desc="Una aplicación Full Stack que utiliza una base de datos MySQL externa para almacenar los libros que estoy leyendo con su información respectiva"
-						image_url="thedb_thumbnail.png"
-						width="20"			
-						height="20"		
-						/>
-					<ProjectCard name = "Computer Graphics 3D engine"
-						tags={["C"]}
-						href="https://www.github.com/AmetsMarti/3D_engine"
-						alt="Miniatura del motor 3D"
-						desc="Un motor 3D desarrollado en la asignación de Gráficos por Computadora en la universidad, es puramente para fines educativos y explora diferentes funcionalidades como transformaciones, iluminación y cámaras."
-						image_url="3d_engine_thumbnail.png"
-						width="20"
-						height="20"	
-					/>
-						<ProjectCard name = "React map Generator"
-						tags={["React", "JavaScript", "HTML", "CSS"]}f
-						href="https://www.github.com/AmetsMarti/map_generator_next"
-						alt="React Map generator"
-						desc="Implementacion del generador de mapas en React, es puramente para mostrar un diseño hecho en React de un algoritmo ya implementado por mi"
-						image_url="map_generator_next_thumbnail.png"
-						width="20"
-						height="20"	
-					/>
-				</div>
-			</section>
-	</main>
+<main class="">
+	<!-- Projects Section -->
+	<section class="projects my-16">
+		<div class="text-center mb-12">
+			<h2
+				data-i18n="projects.title"
+				class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4"
+			>
+				Mis Proyectos
+			</h2>
+			<p
+				class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto"
+			>
+			</p>
+		</div>
+
+		<div
+			class="grid place-items-center grid-flow-row gap-8 grid-cols-1 md:grid-cols-2 xl:grid-cols-2"
+		>
+			<div class="project-card">
+				<ProjectCard
+					name="Calculator"
+					titleKey="projects.calculator.name"
+					desc="Calculadora simple desarrollada para web"
+					descKey="projects.calculator.description"
+					href="https://www.github.com/AmetsMarti/Calculator"
+					image_url="calculator_thumbnail.jpg"
+					width="300"
+					height="200"
+					alt="Miniatura de la calculadora"
+					tags={["JavaScript", "HTML", "CSS"]}
+				/>
+			</div>
+
+			<div class="project-card">
+				<ProjectCard
+					name="TheDB"
+					titleKey="projects.thedb.name"
+					descKey="projects.thedb.description"
+					tags={["JavaScript", "HTML", "CSS", "SQL"]}
+					href="https://www.github.com/AmetsMarti/TheDB"
+					alt="Miniatura de TheDB"
+					desc="Aplicacion web para gestionar una base de datos de libros"
+					image_url="thedb_thumbnail.png"
+					width="20"
+					height="20"
+				/>
+			</div>
+
+			<div class="project-card">
+				<ProjectCard
+					name="Computer Graphics 3D engine"
+					titleKey="projects.engine3d.name"
+					descKey="projects.engine3d.description"
+					tags={["C"]}
+					href="https://www.github.com/AmetsMarti/3D_engine"
+					alt="Miniatura del motor 3D"
+					desc="Un motor 3D desarrollado en la asignatura de Gráficos por Computadora en la universidad, es puramente para fines educativos y explora diferentes funcionalidades como transformaciones, iluminación y cámaras."
+					image_url="3d_engine_thumbnail.png"
+					width="20"
+					height="20"
+				/>
+			</div>
+
+			<div class="project-card">
+				<ProjectCard
+					name="React map Generator"
+					titleKey="projects.reactMap.name"
+					descKey="projects.reactMap.description"
+					tags={["React", "JavaScript", "HTML", "CSS"]}
+					href="https://www.github.com/AmetsMarti/map_generator_next"
+					alt="React Map generator"
+					desc="Implementacion del generador de mapas en React"
+					image_url="map_generator_next_thumbnail.png"
+					width="20"
+					height="20"
+				/>
+			</div>
+		</div>
+	</section>
+</main>
