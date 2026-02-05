@@ -64,66 +64,66 @@
         "title": "Etengabeko ikaskuntza",
         "description": "Beti profesionalki hazten eta teknologiako ezagutzak zabaltzen dituzten aukera berriak bilatzen."
       }
-    },
-    "profile": {
-      "title": "Profil Profesionala",
-      "subtitle": "Trebetasunak, ezagutzak eta espezializazio-arloak",
-      "languages": {
-        "title": "Hizkuntzak",
-        "euskera": {
-          "name": "Euskera",
-          "level": "Ama hizkuntza"
-        },
-        "english": {
-          "name": "Ingelesa",
-          "level": "B2 maila"
-        },
-        "spanish": {
-          "name": "Gaztelania",
-          "level": "Maila altua"
-        },
-        "italian": {
-          "name": "Italiera",
-          "level": "A1 Maila"
-        }
+    }
+  },
+  "profile": {
+    "title": "Profil Profesionala",
+    "subtitle": "Trebetasunak, ezagutzak eta espezializazio-arloak",
+    "languages": {
+      "title": "Hizkuntzak",
+      "euskera": {
+        "name": "Euskera",
+        "level": "Ama hizkuntza"
       },
-      "knowledge": {
-        "title": "Ezagutzak",
-        "oop": "Objektuetara bideratutako programazioa",
-        "algorithms": "Algoritmo eta datu-egituren diseinua",
-        "software": "Software ingeniaritza eta web garapena",
-        "databases": "SQL datu-baseak",
-        "graphics": "Grafikoak eta shaders",
-        "ai": "Adimen Artifiziala eta Datu Meatze"
+      "english": {
+        "name": "Ingelesa",
+        "level": "B2 maila"
       },
-      "tech": {
-        "title": "Teknologiak"
+      "spanish": {
+        "name": "Gaztelania",
+        "level": "Maila altua"
+      },
+      "italian": {
+        "name": "Italiera",
+        "level": "A1 Maila"
       }
     },
-    "projects": {
-      "anchor": "Ikusi Proiektua",
-      "title": "Nire Proiektuak",
-      "subtitle": "",
-      "calculator": {
-        "name": "Calculator",
-        "description": "Weberako garatutako kalkulagailu sinplea"
-      },
-      "mapGenerator": {
-        "name": "mapGenerator",
-        "description": "Mapa ausazkoen sortzailea algoritmo desberdin batzuekin, hala nola Cellular automata eta random walk"
-      },
-      "thedb": {
-        "name": "TheDB",
-        "description": "Liburuen datu-base bat kudeatzeko web aplikazioa"
-      },
-      "engine3d": {
-        "name": "Computer Graphics 3D engine",
-        "description": "Unibertsitateko Konputagailuko Grafikoen irakasgaian garatutako 3D motorea, helburu didaktikorako soilik da eta funtzionalitate desberdinak aztertzen ditu, hala nola eraldaketak, argiteria eta kamerak."
-      },
-      "reactMap": {
-        "name": "React map Generator",
-        "description": "Mapa sortzailearen React inplementazioa"
-      }
+    "knowledge": {
+      "title": "Ezagutzak",
+      "oop": "Objektuetara bideratutako programazioa",
+      "algorithms": "Algoritmo eta datu-egituren diseinua",
+      "software": "Software ingeniaritza eta web garapena",
+      "databases": "SQL datu-baseak",
+      "graphics": "Grafikoak eta shaders",
+      "ai": "Adimen Artifiziala eta Datu Meatze"
+    },
+    "tech": {
+      "title": "Teknologiak"
+    }
+  },
+  "projects": {
+    "anchor": "Ikusi Proiektua",
+    "title": "Nire Proiektuak",
+    "subtitle": "",
+    "calculator": {
+      "name": "Calculator",
+      "description": "Weberako garatutako kalkulagailu sinplea"
+    },
+    "mapGenerator": {
+      "name": "mapGenerator",
+      "description": "Mapa ausazkoen sortzailea algoritmo desberdin batzuekin, hala nola Cellular automata eta random walk"
+    },
+    "thedb": {
+      "name": "TheDB",
+      "description": "Liburuen datu-base bat kudeatzeko web aplikazioa"
+    },
+    "engine3d": {
+      "name": "Computer Graphics 3D engine",
+      "description": "Unibertsitateko Konputagailuko Grafikoen irakasgaian garatutako 3D motorea, helburu didaktikorako soilik da eta funtzionalitate desberdinak aztertzen ditu, hala nola eraldaketak, argiteria eta kamerak."
+    },
+    "reactMap": {
+      "name": "React map Generator",
+      "description": "Mapa sortzailearen React inplementazioa"
     }
   }
 }
