@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.astro";
 
@@ -62,8 +63,11 @@ const base = import.meta.env.BASE_URL;
 			<script define:vars={{ translations }}>
 				(function () {
 					window.allTranslations = translations;
-					window.currentLanguage = "es";
-					window.translations = translations.es;
+					const savedLang =
+						typeof localStorage !== "undefined" &&
+						localStorage.getItem("language");
+					window.currentLanguage = savedLang || "es";
+					window.translations = translations[window.currentLanguage] || translations.es;
 
 					function t(key, fallback = key) {
 						return key

@@ -14,6 +14,9 @@ const Header = () => {
         if (theme === 'light') {
             root.classList.remove('dark');
             root.classList.add('light');
+        } else {
+            root.classList.remove('light');
+            root.classList.add('dark');
         }
         localStorage.setItem('theme', theme);
         document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));

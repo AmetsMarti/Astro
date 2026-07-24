@@ -15,30 +15,39 @@
     "title": "My Journey",
     "subtitle": "A journey through my academic background and professional experience",
     "education": {
+      "title": "Education",
       "primary": {
         "title": "Primary Education",
         "subtitle": "Uzturpe Ikastola, Ibarra",
         "date": "2010-2016"
       },
       "bachillerato": {
-        "title": "Scientific Baccalaureate",
+        "title": "Scientific Bachiller",
         "subtitle": "Orixe BHI, Tolosa",
         "date": "2020-2022"
-      },
-      "university": {
-        "title": "Computer Engineering (In progress)",
-        "subtitle": "University - 3rd year, Computing",
-        "date": "2022-..."
       },
       "exchange": {
         "title": "Erasmus Exchange",
         "subtitle": "La Sapienza, Rome",
         "date": "2024-2025"
       },
+      "university": {
+        "title": "Computer Engineering",
+        "subtitle": "University of the Basque Country - Graduated in Computing",
+        "date": "2022-2026"
+      }
+    },
+    "experience": {
+      "title": "Professional Experience",
       "internship": {
         "title": "Internship at Developair Technologies",
         "subtitle": "Web Developer - Frontend",
         "date": "2025-06-02 - 2025-07-24"
+      },
+      "tfg": {
+        "title": "TFG at Lortek",
+        "subtitle": "MLOps and Machine Learning for defect detection in arc welding processes",
+        "date": "March 2026 - July 2026"
       }
     },
     "certifications": {
@@ -48,12 +57,16 @@
         "subtitle": "Official Language School"
       },
       "bachillerato": {
-        "title": "Baccalaureate Degree",
+        "title": "Bachiller Degree",
         "subtitle": "Scientific-Technological Modality"
       },
       "italian": {
         "title": "A1 Italian Certificate",
         "subtitle": "La Sapienza"
+      },
+      "degree": {
+        "title": "Computer Engineering - Specialized in Computing",
+        "subtitle": "University of the Basque Country"
       },
       "learning": {
         "title": "Constantly learning",
@@ -68,7 +81,7 @@
       "title": "Languages",
       "euskera": {
         "name": "Basque",
-        "level": "Native language"
+        "level": ""
       },
       "english": {
         "name": "English",

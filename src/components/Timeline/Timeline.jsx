@@ -19,104 +19,81 @@ const Timeline = ({
   const [activeStep, setActiveStep] = useState(0);
   const timelineRef = useRef(null);
   const stepRefs = useRef([]);
-  const progressLineRef = useRef(null);
+  const triggerRef = useRef(null);
 
   useEffect(() => {
     if (!timelineRef.current || typeof window === 'undefined') return;
 
-
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-
-    if (progressLineRef.current) {
-      gsap.set(progressLineRef.current, {
-        [orientation === 'vertical' ? 'height' : 'width']: '0%'
-      });
+    if (triggerRef.current) {
+      triggerRef.current.kill();
     }
 
     stepRefs.current.forEach((step, index) => {
       if (step) {
         const dot = step.querySelector('.timeline-dot');
-        gsap.set(step, { opacity: 0.3 });
+        const isActive = index === 0;
+        gsap.set(step, { opacity: isActive ? 1 : 0.3 });
         gsap.set(dot, { 
-          scale: 0.8,
-          backgroundColor: lineColor,
-          borderColor: lineColor
+          scale: isActive ? 1.1 : 0.8,
+          backgroundColor: isActive ? activeColor : lineColor,
+          borderColor: isActive ? activeColor : lineColor
         });
       }
     });
 
-    // Create scroll trigger for progress line and steps
-    ScrollTrigger.create({
+    triggerRef.current = ScrollTrigger.create({
       trigger: timelineRef.current,
-      start: "top 70%",
-      end: "bottom 30%",
+      start: "top 80%",
+      end: "bottom 20%",
       scrub: 1,
       onUpdate: (self) => {
         const progress = self.progress;
-        
-        // Update progress line
-        if (progressLineRef.current) {
-          gsap.to(progressLineRef.current, {
-            [orientation === 'vertical' ? 'height' : 'width']: `${progress * 100}%`,
-            duration: 0.1,
-            ease: "none"
-          });
-        }
-
-        // Calculate and update active step
         const newActiveStep = Math.floor(progress * steps.length);
         const clampedStep = Math.max(0, Math.min(newActiveStep, steps.length - 1));
         
-        if (clampedStep !== activeStep) {
-          setActiveStep(clampedStep);
-          
-          // Animate steps
-          stepRefs.current.forEach((step, index) => {
-            if (step) {
-              const dot = step.querySelector('.timeline-dot');
-              const isActive = index <= clampedStep;
-              
-              gsap.to(step, {
-                opacity: isActive ? 1 : 0.3,
-                duration: 0.3,
-                ease: "power2.out"
-              });
-              
-              gsap.to(dot, {
-                scale: isActive ? 1.1 : 0.8,
-                backgroundColor: isActive ? activeColor : lineColor,
-                borderColor: isActive ? activeColor : lineColor,
-                duration: 0.3,
-                ease: "power2.out"
-              });
-            }
-          });
-        }
+        stepRefs.current.forEach((step, index) => {
+          if (step) {
+            const dot = step.querySelector('.timeline-dot');
+            const isActive = index <= clampedStep;
+            
+            gsap.to(step, {
+              opacity: isActive ? 1 : 0.3,
+              duration: 0.3,
+              ease: "power2.out"
+            });
+            
+            gsap.to(dot, {
+              scale: isActive ? 1.1 : 0.8,
+              backgroundColor: isActive ? activeColor : lineColor,
+              borderColor: isActive ? activeColor : lineColor,
+              duration: 0.3,
+              ease: "power2.out"
+            });
+          }
+        });
       }
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      if (triggerRef.current) {
+        triggerRef.current.kill();
+        triggerRef.current = null;
+      }
     };
-  }, [steps.length, orientation, lineColor, activeColor, activeStep]);
+  }, [steps.length, orientation, lineColor, activeColor]);
 
   if (!steps.length) return null;
 
   return (
     <div 
       ref={timelineRef}
-      className={`timeline-container ${orientation} ${className} sticky top-0`}
+      className={`timeline-container ${orientation} ${className}`}
       style={{
         '--line-color': lineColor,
         '--active-color': activeColor,
         '--step-size': `${stepSize}px`
       }}
     >
-      {/* Timeline Line */}
-      <div className="timeline-line">
-        <div ref={progressLineRef} className="timeline-progress" />
-      </div>
-
       {/* Timeline Steps */}
       <div className="timeline-steps">
         {steps.map((step, index) => (
@@ -135,6 +112,7 @@ const Timeline = ({
                 title={step.content.title}
                 subtitle={step.content.subtitle}
                 date={step.content.date}
+                highlighted={step.content.highlighted}
               />
             </div>
           </div>
@@ -143,36 +121,9 @@ const Timeline = ({
 
       <style jsx>{`
         .timeline-container {
-          position:sticky;
+          position: relative;
           padding: 2rem 0;
-          top: 200px;
           margin-bottom: 100px;
-        }
-
-        .timeline-line {
-          position:absolute;
-          background-color: var(--line-color);
-          z-index: 1;
-        }
-
-        .timeline-container.vertical .timeline-line {
-          left: calc(var(--step-size) / 2 - 1px);
-          top: 0;
-          bottom: 0;
-          width: 2px;
-        }
-
-        .timeline-container.horizontal .timeline-line {
-          top: calc(var(--step-size) / 2 - 1px);
-          left: 0;
-          right: 0;
-          height: 2px;
-        }
-
-        .timeline-progress {
-          background-color: var(--active-color);
-          width: 100%;
-          height: 100%;
         }
 
         .timeline-steps {

@@ -11,10 +11,71 @@
     "email": "ametsmarti7@gmail.com",
     "location": "Ibarra, Gipuzkoa"
   },
+  "profile": {
+    "title": "Profil Profesionala",
+    "subtitle": "Trebetasunak, ezagutzak eta espezializazio-arloak",
+    "languages": {
+      "title": "Hizkuntzak",
+      "euskera": {
+        "name": "Euskera",
+        "level": "Ama hizkuntza"
+      },
+      "english": {
+        "name": "Ingelesa",
+        "level": "B2 maila"
+      },
+      "spanish": {
+        "name": "Gaztelania",
+        "level": "Maila altua"
+      },
+      "italian": {
+        "name": "Italiera",
+        "level": "A1 Maila"
+      }
+    },
+    "knowledge": {
+      "title": "Ezagutzak",
+      "oop": "Objektuetara bideratutako programazioa",
+      "algorithms": "Algoritmo eta datu-egituren diseinua",
+      "software": "Software ingeniaritza eta web garapena",
+      "databases": "SQL datu-baseak",
+      "graphics": "Grafikoak eta shaders",
+      "ai": "Adimen Artifiziala eta Datu Meatze"
+    },
+    "tech": {
+      "title": "Teknologiak"
+    }
+  },
+  "projects": {
+    "anchor": "Ikusi Proiektua",
+    "title": "Nire Proiektuak",
+    "subtitle": "",
+    "calculator": {
+      "name": "Calculator",
+      "description": "Weberako garatutako kalkulagailu sinplea"
+    },
+    "mapGenerator": {
+      "name": "mapGenerator",
+      "description": "Mapa ausazkoen sortzailea algoritmo desberdin batzuekin, hala nola Cellular automata eta random walk"
+    },
+    "thedb": {
+      "name": "TheDB",
+      "description": "Liburuen datu-base bat kudeatzeko web aplikazioa"
+    },
+    "engine3d": {
+      "name": "Computer Graphics 3D engine",
+      "description": "Unibertsitateko Konputagailuko Grafikoen irakasgaian garatutako 3D motorea, helburu didaktikorako soilik da eta funtzionalitate desberdinak aztertzen ditu, hala nola eraldaketak, argiteria eta kamerak."
+    },
+    "reactMap": {
+      "name": "React map Generator",
+      "description": "Mapa sortzailearen React inplementazioa"
+    }
+  },
   "timeline": {
     "title": "Nire Ibilbidea",
     "subtitle": "Nire prestakuntza akademikoa eta esperientzia profesionalaren bidaia",
     "education": {
+      "title": "Ikasketak",
       "primary": {
         "title": "Lehen Hezkuntza",
         "subtitle": "Uzturpe Ikastola, Ibarra",
@@ -25,20 +86,28 @@
         "subtitle": "Orixe BHI, Tolosa",
         "date": "2020-2022"
       },
-      "university": {
-        "title": "Informatika Ingeniaritza (Ikasketak)",
-        "subtitle": "Unibertsitatea - 3. maila, Konputazioa",
-        "date": "2022-..."
-      },
       "exchange": {
         "title": "Erasmus Trukea",
         "subtitle": "La Sapienza, Erroma",
         "date": "2024-2025"
       },
+      "university": {
+        "title": "Informatika Ingeniaritza",
+        "subtitle": "Euskal Herriko Unibertsitatea - Konputazioan Graduatua",
+        "date": "2022-2026"
+      }
+    },
+    "experience": {
+      "title": "Esperientzia Profesionala",
       "internship": {
-        "title": "Praktiketak Developair Technologies-en",
+        "title": "Praktikak Developair Technologies-en",
         "subtitle": "Web Garatzailea - Frontend",
         "date": "2025-06-02 - 2025-07-24"
+      },
+      "tfg": {
+        "title": "TFG Lorteken",
+        "subtitle": "MLOps eta Machine Learning arkuko soldadura prozesuetan akatsak detektatzeko",
+        "date": "Martxoa 2026 - Uztaila 2026"
       }
     },
     "certifications": {
@@ -55,69 +124,13 @@
         "title": "A1 Italiera Titulua",
         "subtitle": "La Sapienza"
       },
+      "degree": {
+        "title": "Ingenieritza Informatikoa - Konputazioan espezializatua",
+        "subtitle": "Euskal Herriko Unibertsitatea"
+      },
       "learning": {
         "title": "Etengabeko ikaskuntza",
         "description": "Beti profesionalki hazten eta teknologiako ezagutzak zabaltzen dituzten aukera berriak bilatzen."
-      }
-    },
-    "profile": {
-      "title": "Profil Profesionala",
-      "subtitle": "Trebetasunak, ezagutzak eta espezializazio-arloak",
-      "languages": {
-        "title": "Hizkuntzak",
-        "euskera": {
-          "name": "Euskera",
-          "level": "Ama hizkuntza"
-        },
-        "english": {
-          "name": "Ingelesa",
-          "level": "B2 maila"
-        },
-        "spanish": {
-          "name": "Gaztelania",
-          "level": "Maila altua"
-        },
-        "italian": {
-          "name": "Italiera",
-          "level": "A1 Maila"
-        }
-      },
-      "knowledge": {
-        "title": "Ezagutzak",
-        "oop": "Objektuetara bideratutako programazioa",
-        "algorithms": "Algoritmo eta datu-egituren diseinua",
-        "software": "Software ingeniaritza eta web garapena",
-        "databases": "SQL datu-baseak",
-        "graphics": "Grafikoak eta shaders",
-        "ai": "Adimen Artifiziala eta Datu Meatze"
-      },
-      "tech": {
-        "title": "Teknologiak"
-      }
-    },
-    "projects": {
-      "anchor": "Ikusi Proiektua",
-      "title": "Nire Proiektuak",
-      "subtitle": "",
-      "calculator": {
-        "name": "Calculator",
-        "description": "Weberako garatutako kalkulagailu sinplea"
-      },
-      "mapGenerator": {
-        "name": "mapGenerator",
-        "description": "Mapa ausazkoen sortzailea algoritmo desberdin batzuekin, hala nola Cellular automata eta random walk"
-      },
-      "thedb": {
-        "name": "TheDB",
-        "description": "Liburuen datu-base bat kudeatzeko web aplikazioa"
-      },
-      "engine3d": {
-        "name": "Computer Graphics 3D engine",
-        "description": "Unibertsitateko Konputagailuko Grafikoen irakasgaian garatutako 3D motorea, helburu didaktikorako soilik da eta funtzionalitate desberdinak aztertzen ditu, hala nola eraldaketak, argiteria eta kamerak."
-      },
-      "reactMap": {
-        "name": "React map Generator",
-        "description": "Mapa sortzailearen React inplementazioa"
       }
     }
   }

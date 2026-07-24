@@ -7,6 +7,7 @@ import SplitText from "../components/SplitText.jsx";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import TranslatedTimeline from "../components/Timeline/TranslatedTimeline.jsx";
+import TranslatedExperience from "../components/Timeline/TranslatedExperience.jsx";
 import { TimelineElement } from "../components/Timeline/TimelineElement.jsx";
 import FlowingMenmu from "../components/Components/FlowingMenu/FlowingMenu.tsx";
 import Squares from "../components/Backgrounds/Squares/Squares.jsx";
@@ -190,28 +191,19 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 	<div
 		class="bg-slate-50 dark:bg-slate-900 border-t border-slate-300 dark:border-slate-600"
 	>
-		<!-- Timeline Section with Different Background -->
+		<!-- Education Section -->
 		<section class="timeline-section min-h-screen py-20 px-4">
 			<div class="max-w-7xl mx-auto">
-				<!-- Section Title -->
 				<div class="text-center mb-16">
 					<h2
 						class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4"
-						data-i18n="timeline.title"
+						data-i18n="timeline.education.title"
 					>
-						Mi Trayectoria
+						Formación Académica
 					</h2>
-					<p
-						class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto"
-						data-i18n="timeline.subtitle"
-					>
-						Un recorrido por mi formación académica y experiencia
-						profesional
-					</p>
 				</div>
 
 				<div class="grid lg:grid-cols-3 gap-12 items-start">
-					<!-- Timeline Column -->
 					<div class="lg:col-span-2">
 						<TranslatedTimeline
 							client:load
@@ -223,7 +215,6 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 						/>
 					</div>
 
-					<!-- Certifications Column -->
 					<div class="lg:col-span-1">
 						<div class="sticky top-8">
 							<h3
@@ -325,10 +316,66 @@ const tags = ["Web", "Python", "SQL", "GitHub", "React", "C", "Java"];
 										</div>
 									</div>
 								</div>
+
+								<div
+									class="group p-4 rounded-xl bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-600/50 hover:bg-white/70 dark:hover:bg-slate-800/70 transition-all duration-300 hover:shadow-lg hover:scale-105"
+								>
+									<div class="flex items-center gap-3">
+										<div
+											class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center"
+										>
+											<svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" fill="none"/>
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+											</svg>
+										</div>
+										<div>
+											<h4
+												class="font-semibold text-slate-800 dark:text-slate-200"
+												data-i18n="timeline.certifications.degree.title"
+											>
+												Ingeniería Informática - Especializado en Computación
+											</h4>
+											<p
+												class="text-sm text-slate-600 dark:text-slate-400"
+												data-i18n="timeline.certifications.degree.subtitle"
+											>
+												Universidad del País Vasco
+											</p>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+	</div>
+	<div class="border-t border-slate-300 dark:border-slate-600"></div>
+	<!-- Professional Experience Section -->
+	<div
+		class="bg-slate-50 dark:bg-slate-900"
+	>
+		<section class="min-h-screen py-20 px-4">
+			<div class="max-w-4xl mx-auto">
+				<div class="text-center mb-16">
+					<h2
+						class="text-4xl font-bold text-slate-800 dark:text-slate-200 mb-4"
+						data-i18n="timeline.experience.title"
+					>
+						Experiencia Profesional
+					</h2>
+				</div>
+				<TranslatedExperience
+					client:load
+					orientation="vertical"
+					activeColor="#10B981"
+					lineColor="#475569"
+					stepSize={10}
+					className="w-full"
+				/>
 			</div>
 		</section>
 	</div>

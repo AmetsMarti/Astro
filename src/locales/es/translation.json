@@ -15,6 +15,7 @@
     "title": "Mi Trayectoria",
     "subtitle": "Un recorrido por mi formación académica y experiencia profesional",
     "education": {
+      "title": "Formación Académica",
       "primary": {
         "title": "Educación Primaria",
         "subtitle": "Uzturpe Ikastola, Ibarra",
@@ -25,20 +26,28 @@
         "subtitle": "Orixe BHI, Tolosa",
         "date": "2020-2022"
       },
-      "university": {
-        "title": "Ingeniería Informática (En curso)",
-        "subtitle": "Universidad - 3er año, Computación",
-        "date": "2022-..."
-      },
       "exchange": {
         "title": "Intercambio Erasmus",
         "subtitle": "La Sapienza, Roma",
         "date": "2024-2025"
       },
+      "university": {
+        "title": "Ingeniería Informática",
+        "subtitle": "Universidad del Pais Vasco - Graduado en Computación",
+        "date": "2022-2026"
+      }
+    },
+    "experience": {
+      "title": "Experiencia Profesional",
       "internship": {
         "title": "Prácticas en Developair Technologies",
         "subtitle": "Desarrollador Web - Frontend",
         "date": "2025-06-02 - 2025-07-24"
+      },
+      "tfg": {
+        "title": "TFG en Lortek",
+        "subtitle": "MLOps y Machine Learning para detección de defectos en procesos de soldadura de arco",
+        "date": "Marzo 2026 - Julio 2026"
       }
     },
     "certifications": {
@@ -54,6 +63,10 @@
       "italian": {
         "title": "Título A1 Italiano",
         "subtitle": "La Sapienza"
+      },
+      "degree": {
+        "title": "Ingeniería Informática - Especializado en Computación",
+        "subtitle": "Universidad del País Vasco"
       },
       "learning": {
         "title": "En constante aprendizaje",
